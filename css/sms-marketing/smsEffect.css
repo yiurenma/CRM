@@ -600,3 +600,14 @@
        display: block;
        padding: 8px 0;
    }
+
+   .variable {
+    display: inline-block;
+    color: #8ada19;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    contenteditable: false;
+    }

@@ -18,6 +18,27 @@ var smsMarketingSmsEffect = {
     }, {
         "data": "smsContent",
         "title": "短信内容",
+        "createdCell": function(td, cellData, rowData, row, col){
+            var data = cellData;
+            //对短信内容中的变量做特殊处理
+            if(data.indexOf("mainStoreName") > 0){
+               var reg1 = new RegExp("mainStoreName","g");
+               data = data.replace(reg1, "<div class='variable'>连锁名称</div>");
+            }
+            if(data.indexOf("employeeRealName") > 0){
+               var reg2 = new RegExp("employeeRealName","g");
+               data = data.replace(reg2, "<div class='variable'>店员姓名</div>");
+            }
+            if(data.indexOf("branchStoreName") > 0){
+               var reg3 = new RegExp("branchStoreName","g");
+               data = data.replace(reg3, "<div class='variable'>门店名称</div>");
+            }
+            if(data.indexOf("memberRealName") > 0){
+               var reg4 = new RegExp("memberRealName","g");
+               data = data.replace(reg4, "<div class='variable'>会员姓名</div>");
+            }
+            $(td).html(data);
+        }
     }, {
         "data": "memberCount",
         "title": "目标会员数",

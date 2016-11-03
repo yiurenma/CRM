@@ -57,8 +57,8 @@ var smsEditItem = {
 
         $("#inputWords").on("input", function() {
             //计算输入的文本数量和短信数量
-            var words_num = $("#inputWords").text().length;
-            $("#wordCounter").text(words_num + 5);
+            var words_num = $("#inputWords").text().length + 5;
+            $("#wordCounter").text(words_num);
             $("#msgCounter").text(Math.ceil(words_num / 70));
             //给手机屏幕文本框赋值
             var phoneTextNode = $(this).clone();

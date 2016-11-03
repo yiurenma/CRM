@@ -13,7 +13,9 @@ function post(method, path, data, success) {
     data.vCode = vCode;
     data.vType = vType;
     data.token = token;
+    console.log(data);
     $.post(apiEntry, data, function(data) {
+        console.log(data);
         success(data);
     }, "json")
 };

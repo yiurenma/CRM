@@ -153,12 +153,10 @@ var messageMarketingItem = {
     requestPrepare: function(method, path, data) {
         var getFlag = $(".curFlag").attr("data-index");
         var succ = function(prepare_list) {
-                console.log(prepare_list);
-                console.log(data);
                 $("#allNum").text(prepare_list.totalCount);
                 $("#effectNum").text(prepare_list.effectCount);
                 // 筛选人数小于200时
-                if (prepare_list.effectCount <= 2) {
+                if (prepare_list.effectCount <= 200) {
                     $('.resultInfo .hideBox').removeClass("hideBox");
                     $('.storeManager').addClass("hideBox"); //把门店负责人数隐藏
                     $('.checkList').addClass("hideBox"); //隐藏查看
@@ -189,7 +187,6 @@ var messageMarketingItem = {
     // 获取快速筛选页面分组列表
     getGroup: function() {
         var success = function(groupData) {
-            console.log(groupData)
             var crmGroupFirstClassList = groupData.crmGroupFirstClassList;
             var classLength = crmGroupFirstClassList.length;
             for (var i in crmGroupFirstClassList) {
@@ -231,7 +228,6 @@ var messageMarketingItem = {
             "mStId": messageMarketingItem.mainStoreId
         };
         var success = function(tagList) {
-            console.log(tagList);
             var listLength = tagList.dataList.length;
             for (var i in tagList.dataList) {
                 if (i == 0) {
@@ -703,7 +699,7 @@ var messageMarketingItem = {
                                     error;
                             }
                          //最近消费时间
-                         } else if (categoryVal[(categoryVal.length-1)] == "cLastTime" && ((curTips == "今天") || (curTips == "近7天") || (curTips == "近1个月") || (curTips == "近3个月") || (curTips == "自定义") || (curTips == "userDefined"))) {
+                         } else if ((curTips == "今天") || (curTips == "近7天") || (curTips == "近1个月") || (curTips == "近3个月") || (curTips == "自定义") || (curTips == "userDefined")) {
                             var lastDate;
                             // 时间段格式处理
                             switch (true) {
@@ -753,7 +749,6 @@ var messageMarketingItem = {
                     length = itemLength;
                 } else {
                     length = sickLength + itemLength + 3;
-                    console.log(length);
                 }
                 // 给data赋值
                 for (var i = 0; i < length; i++) {

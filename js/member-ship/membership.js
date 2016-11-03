@@ -548,6 +548,7 @@ function changeTableContent() {
         if ($(this).attr("groupType") == 1) {
             $("#dropdownMenu").html($(this).text() + '<span class="caret"></span>');
             $(".impressionCount").children("b").text("创建分组");
+            $(".impressionCount").children("b").removeAttr("data-type");
             membership.groupId = $(this).attr("groupId");
             membership.resourceType = "createGroup";
             membership.childResourceType = "";
@@ -568,6 +569,7 @@ function changeTableContent() {
             $("#dropdownMenu").html($(this).text() + '<span class="caret"></span>');
             $(".short .left_shot:eq(0)").attr("style", "display:inherit");
             $(".impressionCount").children("b").text("创建分组");
+            $(".impressionCount").children("b").removeAttr("data-type");
             membership.groupId = $(this).attr("groupId");
             membership.goodsId = "";
             membership.resourceType = "createGroup";
