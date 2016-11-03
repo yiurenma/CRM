@@ -1,0 +1,559 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body, ul, li, a {
+	text-decoration: none;
+	list-style: none;
+}
+
+/*会员分组*/
+.ownership {
+	width: 100%;
+	height: 30px;
+	margin-top: 20px;
+}
+.grade {
+	color: #8aa1ac;
+	font-family: "黑体";
+}
+.ownership h2 {
+	height: 30px;
+	line-height: 30px;
+	float: left;
+}
+.ownership .grade {
+	float: left;
+	line-height: 30px;
+	font-size: 12px;
+	margin-left: 20px;
+}
+.ic_top {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../images/ic_down.png);
+}
+.btn_divide {
+	float: right;
+	width: 100px;
+	height: 30px;
+	border: none;
+	outline: none;
+	background: #8ada19;
+	text-align: center;
+	font-family: "黑体";
+	border-radius: 2px;
+	color: #ffffff;
+}
+
+/**/
+.modify {
+	width: 100%;
+	height: 30px;
+	margin: 24px 20px;
+}
+.modify li {
+	float: left;
+	line-height: 30px;
+	width: 80px;
+	height: 30px;
+	text-align: center;
+	background: #dee5ea;
+	color: #8aa1ac;
+}
+.table  tr th {
+	color: #8aa1ac;
+}
+.table td {
+	color: #324148;
+}
+.prosmo_hid dl dt dd a {
+	color: #324148;
+}
+.ic_right {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	float: right;
+	margin-right: 5px;
+	margin-top: 10px;
+	background: red;
+	background: url(../images/ic_right.png)no-repeat center;
+}
+.modify span {
+	line-height: 30px;
+	display: block;
+	border-left: 1px solid #8aa1ac;
+	margin-left: 20px;
+	width: 120px;
+	text-align: center;
+	float: left;
+	color: #9b9b9b;
+}
+.Controller {
+	float: right;
+}
+.Controller span {
+	border: none;
+	color: #9b9b9b;
+}
+.optimism {
+	height: 40px;
+	margin-left: 20px;
+	line-height: 40px;
+}
+.optimism li {
+	float: left;
+}
+.content_op {
+	font-size: 14px;
+	color: #8aa1ac;
+	height: 30px;
+}
+.aaa li {
+	float: right;
+	color: blue;
+	width: 120px;
+	height: 40px;
+	background: #8ada19;
+}
+.right_op i {
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/*分组会员*/
+.prosmore_drug {
+	width: 522px;
+	background: #ffffff;
+	position: absolute;
+	left: 144px;
+	top: 40px;
+	border-left: none;
+	border: 1px solid #8aa1ac;
+	z-index: 4444;/*	box-shadow: 0 2px 11px #ccc;*/
+}
+#testDiv {
+	width: height:300px;
+}
+.prosmo_hid {
+	float: left;
+	width: 400px;
+}
+.prosmo_hid dl {
+	overflow: hidden;
+	zoom: 1;
+}
+.prosmo_hid .fore {
+}
+.prosmore_drug .prosmo_hid dt {
+	float: left;
+	width: 50px;
+	color: #c00;
+}
+.prosmo_hid dd {
+	float: left;
+	width: 340px;
+}
+.fore_dd a {
+
+	/*width: 33.33%;*/
+	padding: 0 10px;
+	display: inline-block;
+	float: left;
+	height: 40px;
+	line-height: 40px;
+}
+.left_prosmo {
+	width: 30px;
+	height: 20px;
+	color: #1989fa;
+	float: left;
+	font-style: normal;
+	border: 1px solid #1989fa;
+	text-align: center;
+	margin: 10px 10px;
+	border-radius: 2px;
+	font-weight: 700;
+}
+.fore_dd a {
+	color: #324148;
+	font-weight: 600;
+}
+.fore_dd a:hover {
+	text-decoration: none;
+	color: #1989fa;
+}
+.prosmore_drug .ledd {
+	color: #000;
+	width: 120px;
+	float: right;
+	border-left: 1px solid #8aa1ac;
+	height: 300px;
+}
+.prosmore_drug .ledd dl dd {
+	color: #8aa1ac;
+	text-align: center;
+	padding: 5px;
+}
+.prosmore_drug .ledd dl dd:hover {
+	background: #1989fa;
+	color: #ffffff;
+	border-radius: 5px;
+}
+
+/*搜索*/
+
+/*个人血压版样式*/
+.ic_search {
+	width: 190px;	/*background: url(../images/ic_search.png)no-repeat right;*/
+	background: #ffffff;
+	margin-left: 72%;
+	border: 1px solid #dce3e6;
+	margin-top: 1px;
+}
+.dsearch {
+	font-size: 12px;
+	font-family: "黑体";
+	width: 160px;
+}
+.short {
+	height: 30px;
+	margin-top: 10px;
+}
+
+/*分页样式*/
+.div.dataTables_length select {
+	font-family: "黑体";
+}
+.example_length option {
+	font-family: "黑体";
+	text-align: center;
+}
+.dataTables_length label {
+	font-family: "黑体";
+}
+.short input {
+	text-indent: 15px;
+	line-height: 25px;
+	outline: none;
+	border: none;
+	background: #ffffff;
+}
+.short li {
+	float: left;
+	line-height: 30px;
+	height: 30px;
+	color: #9e8adb;
+	font-family: "黑体";
+}
+.short em {
+	padding: 0 10px;
+	color: #dce3e6;
+}
+.short i {
+	width: 22px;
+	height: 22px;
+	display: inline-block;
+	vertical-align: middle;
+}
+.modification {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../images/ic_gn1_write_press.png)no-repeat left;
+	margin-top: -5px;
+}
+.i_remove {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../images/ic_gn1_del_press.png)no-repeat left;
+	margin-top: -3px;
+}
+.ic_down {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../images/ic_down.png)no-repeat right;
+	margin-top: -5px;
+	margin-left: 5px;
+}
+.ic_close_s {
+	width: 10px;
+	height: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../images/ic_close_s.png)no-repeat left;
+	margin-top: -5px;
+}
+.short_message {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: -5px;
+	background: url(../../images/ic_gn1_message_press.png) no-repeat left;
+}
+.short_sms {
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+	vertical-align: middle;
+	background: url(../../images/ic_gn1_calling_press.png)no-repeat left;
+}
+.search_nubmer {
+	width: 200px;
+	height: 26px;
+	float: right;
+	margin-right: 5%;
+}
+.download {
+	float: right;
+	width: 70px;
+	height: 28px;
+	color: #9e8adb;
+	text-align: center;
+	border: 1px solid #9e8adb;
+	background: #dce3e6;
+	line-height: 28px;
+	font-family: "黑体";
+	border-radius: 5px;
+}
+
+/*table*/
+.showslider {
+	width: 80%;
+	height: 100%;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	position: absolute;
+	top: 9px;
+}
+.dataTables_info {
+	display: none;
+}
+.tr_helpmessage {
+	color: #8aa1ac;
+}
+div.dataTables_length select {
+	width: 40px;
+	text-align: center;
+}
+.paging_simple_numbers {
+	margin-top: 20px;
+}
+.dataTables_paginate .paginate_button {
+	box-sizing: border-box;
+	display: inline-block;
+	min-width: 1.5em;
+	height: 30px;
+	padding: 0.3em 0.7em;
+	margin-left: 10px;
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer;
+	outline: none;
+	background: #edf3f9;
+	color: #8aa1ac !important;
+	border: 1px solid #dce3e6;
+	font-family: "黑体";
+}
+.current {
+	text-align: center;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+	padding: 0.3em 0.9em;
+}
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+	color: #8aa1ac !important;
+	border: 1px solid #cacaca;
+	background-color: #ffffff;  /* W3C */
+}
+.dataTables_wrapper .paginate_button img {
+	margin-top: -4px;
+	margin-left: 1px;
+}
+.dataTables_wrapper .dataTables_processing {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 30px;
+	margin-left: -50%;
+	margin-top: -25px;
+	padding-top: 20px;
+	text-align: center;
+	font-size: 1.2em;
+	background-color: white;
+}
+.dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate {
+	color: #333333;
+	margin-top: 10px;
+	text-align: center;
+}
+.table>thead>tr>th {
+	vertical-align: bottom;
+	border-bottom: 1px solid #ddd;
+}
+th, td {
+	white-space: nowrap;
+}
+div.dataTables_wrapper {
+	margin: 0 auto;
+}
+.table {
+	background: #ffffff;
+}
+.table tr th, .table tr td {
+	font-family: "黑体";
+}
+.table tr th {
+	font-size: 12px;
+}
+.showcol {
+	width: 20px;
+	height: 28px;
+	display: inline-block;
+	position: absolute;
+	left: 93.5%;
+	top: 22.5%;
+	line-height: 28px;
+	text-align: center;
+	background: #ffffff;
+	z-index: 1111;
+	color: #8aa1ac;
+}
+
+/*右侧分组*/
+.showul li {
+	margin-left: 10px;
+	font-size: 14px;
+	color: #324148;
+}
+.showul {
+	list-style: none;
+	display: none;
+	position: absolute;
+	left: 87%;
+	top: 28%;
+	background: #FFFFFF;
+	border: 1px solid #ccc;
+	width: 140px;
+	padding: 10px;
+	z-index: 3333;
+}
+.showul li input {
+	vertical-align: text-bottom;
+	margin-bottom: 2px;
+	*margin-bottom: -2px;
+}
+.dataTables_length {
+	margin-top: 10px;
+	color: #8aa1ac;
+	text-align: center;
+}
+.dataTables_length label {
+	color: #8aa1ac;
+	float: left;
+	font-weight: 100;
+}
+
+/*弹出框*/
+.ownership h2 {
+	cursor: pointer;
+	font-size: 16px;
+	font-family: "黑体";
+}
+.ic_top {
+	display: inline-block;
+	vertical-align: middle;
+	width: 10px;
+	height: 10px;
+	background: url(../images/ic_down.png)no-repeat;
+	margin-left: 10px;
+}
+
+/**选择商品分类**/
+.wareSort {
+	border: 1px solid #8aa1ac;
+	background-color: #ffffff;
+	position: absolute;
+	z-index: 222;
+	display: none;
+	box-shadow: 2px 2px 11px #dce3e6;
+}
+.wareSort ul li a:hover {
+	text-decoration: none;
+}
+#sort1 {
+	width: 120px;
+	height: 300px;
+	background: #ffffff;
+	z-index: 222;
+	float: left;
+}
+#sort1 li {
+	height: 30px;
+	line-height: 30px;
+	background: url(../images/ic_right.png)no-repeat right;
+}
+#sort2 {
+	width: 300px;
+	height: 300px;
+	background: #ffffff;
+	z-index: 222;
+	float: left;
+	border-left: 1px solid #8aa1ac;
+	padding: 10px;
+}
+#sort1 li a {
+	margin-left: 15px;
+	font-weight: 500;
+	color: #8aa1ac;
+	text-decoration: none;
+}
+#sort2 li {
+	text-align: left;
+	margin: 0 auto;
+	height: 30px;
+	border-radius: 5px;
+	line-height: 30px;
+}
+#sort2 li a {
+	margin-left: 10px;
+}
+#sort1 li a, #sort2 li a, #sort3 li a {
+	text-decoration: none;
+}
+#sort2 li.active {
+	background: #1989fa;
+	color: #ffffff;
+}
+#sort2 li.active a {
+	color: #ffffff;
+	text-decoration: none;
+}
+#sort1 li.active {
+	background: url(../images/ic_right_press.png)no-repeat right;
+}
+#sort1 li.active a {
+	color: #1989fa;
+}
+#sort2 div dl dt dd a {
+	float: left;
+}
+.ellipsis {
+	padding: 2px 1px;
+	color: #8aa1ac;
+	margin-left: 10px;
+	display: inline-block;
+}

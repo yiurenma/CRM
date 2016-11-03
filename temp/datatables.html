@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>会员管理</title>
+	<link rel="stylesheet" type="text/css" href="../common-tools/Bootstrap-3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../common-tools/Buttons-1.2.2/css/buttons.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../common-tools/DataTables-1.10.12/css/dataTables.bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css"></head>
+<body>
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Launch demo modal</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">Modal title</h4>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-xs-5">
+							<table id="phoneMarketingMemberPerformance" class="table"></table>
+						</div>
+						<div class="col-xs-5">
+							<textarea class = "selectedItem"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="../common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+	<script type="text/javascript" src="../common-tools/Bootstrap-3.3.6/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../common-tools/DataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="../common-tools/DataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+	<script type="text/javascript" src="../common-tools/Buttons-1.2.2/js/dataTables.buttons.min.js"></script>
+	<script type="text/javascript" src="../common-tools/Buttons-1.2.2/js/buttons.html5.min.js"></script>
+	<script type="text/javascript" src="../common-tools/Buttons-1.2.2/js/buttons.colVis.min.js"></script>
+	<script type="text/javascript" src="../common-tools/Buttons-1.2.2/js/buttons.bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js"></script>
+	<script type="text/javascript" src="../js/ajaxCommon.js"></script>
+	<script type="text/javascript" src="../js/jquery-md5.js"></script>
+	<script type="text/javascript" src="membership.js"></script>
+</body>

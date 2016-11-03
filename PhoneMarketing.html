@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>电话营销</title>
+    <link rel="stylesheet" type="text/css" href="common-tools/Bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/Buttons-1.2.2/css/buttons.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/DataTables-1.10.12/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/phone-marketing/phoneMarkting.css">
+    <link rel="stylesheet" type="text/css" href="css/common/leftBar.css">
+
+    <body>
+        <div id="body_container">
+            <aside id="left-aside">
+                <div class="back-drugstore">
+                    <div class="back-drugstore-btn">
+                        <span></span>
+                        <p class="back-text">返回药店管理</p>
+                    </div>
+                </div>
+                <nav class="nav-bar">
+                    <ul class="nav-ul">
+                        <li class="left_bar_li">
+                            <a href="javascript:void(0);"> <i class="left_icon" id="view"></i> 总览
+                            </a>
+                        </li>
+                        <li class="left_bar_li">
+                            <a href="javascript:void(0);"> <i class="left_icon" id="analyse"></i> 药品分析
+                            </a>
+                        </li>
+                        <li class="left_bar_li">
+                            <a href="javascript:void(0);">
+                                <i class="left_icon" id="management"></i> 会员管理
+                            </a>
+                        </li>
+                        <li class="left_bar_li">
+                            <a href="javascript:void(0);">
+                                <i class="left_icon" id="message"></i> 短信营销
+                            </a>
+                        </li>
+                        <li class="left_bar_li show_blue_line">
+                            <a href="javascript:void(0);" class="leftTextBlue">
+                                <i class="left_icon lb_click_4" id="phone"></i> 电话营销
+                            </a>
+                        </li>
+                        <li class="left_bar_li">
+                            <a href="javascript:void(0);">
+                                <i class="left_icon" id="serve"></i> 服务管理
+                            </a>
+                        </li>
+                        <li class="left_bar_li">
+                            <a href="javascript:void(0);">
+                                <i class="left_icon" id="review"></i> 回访记录
+                            </a>
+                        </li>
+                        <li class="left_bar_li">
+                            <a href="javascript:void(0);">
+                                <i class="left_icon" id="bill"></i> 账单中心
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+            <div class="shadowBar"></div>
+            <div class="content">
+                <div id="mm_container">
+                    <header class="header">
+                        <div class="crmDescription">
+                            <p>
+                                <span class="bgBack" onclick="window.location.href=window.history.back()">
+                                <i class="back_btn"></i>
+                                返回
+                            </span>
+                                <span class="split_line"></span>
+                                <span>
+                                效果统计（任务名称：
+                                <span class="taskName">这是任务名称</span> ）
+                                </span>
+                            </p>
+                            <span></span>
+                            <p class="admin_text">系统管理员</p>
+                        </div>
+                        <nav class="message_nav">
+                            <ul>
+                                <li class="messageTabs">
+                                    <a href="javascript:void(0);" class="tabChecked">
+                                        <i class="mm_nav_icon click_0" id="active_icon"></i> 任务详情
+                                        <span></span>
+                                    </a>
+                                    <a href="javascript:void(0);">
+                                        <i class="mm_nav_icon" id="summary_icon"></i> 效果汇总
+                                        <span></span>
+                                    </a>
+                                    <a href="javascript:void(0);">
+                                        <i class="mm_nav_icon" id="detail_icon"></i> 会员明细
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="m_slide_box a_slide_line">
+                                        <div class="m_slide_block blue_block"></div>
+                                        <div class="m_slide_block blue_block hideBox"></div>
+                                        <div class="m_slide_block blue_block hideBox"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </nav>
+                    </header>
+                    <div>
+                        <div class="completion effectTabs">
+                            <div class="message_tab message_first">
+                                <p class="list_title ct_listTitle">完成情况</p>
+                            </div>
+                            <article class="analyseContent">
+                                <div class="analyseUl">
+                                    <a class="category_name">
+                                    会员数量：
+                                    <span class="screenNum"></span>
+                                </a>
+                                    <a class="category_name">
+                                    门店数量：
+                                    <span class="screenNum"></span>
+                                </a>
+                                    <a class="category_name">
+                                    拨打/总数：
+                                    <span class="screenNum"></span>
+                                </a>
+                                    <a class="category_name">
+                                    接通/总数：
+                                    <span class="screenNum"></span>
+                                </a>
+                                </div>
+                            </article>
+                            <div class="memberData">
+                                <div class="message_tab">
+                                    <p class="list_title ct_listTitle">执行情况</p>
+                                </div>
+                                <div class="analyseContent table-responsive">
+                                    <table id="phoneMarketingOperationPerformance" class="table"></table>
+                                </div>
+                                <div class="message_tab">
+                                    <p class="list_title ct_listTitle">会员情况</p>
+                                </div>
+                                <div class="analyseContent table-responsive">
+                                    <table id="phoneMarketingMemberPerformance" class="table"></table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="analyseReport effectTabs hideBox">
+                            <div class="message_tab message_first">
+                                <p class="list_title ct_listTitle">数据概览</p>
+                                <div class="navbar" role="navigation">
+                                    <span class="taskBegin">任务开始</span>
+                                    <div class="timeList">
+                                        <a id="effectTime" href="javascript:void(0);" class="timeDrop" data-toggle="dropdown">
+                                            近7天 <b class="arrow_down"></b>
+                                        </a>
+                                        <ul class="dropdown-menu dropDownList">
+                                            <div class="btn-group span3" id="effectMergeTime" data-toggle="buttons-radio">
+                                                <button type="button" class="btn btn-default btn_five" value="近5天">5天</button>
+                                                <button type="button" class="btn btn-default btn_seven" value="近7天">7天</button>
+                                                <button type="button" class="btn btn-default btn_fifteen" value="近15天">15天</button>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div id="dateRange1" class="btn data-toggle_1">
+                                        <input id="effectDateRange" type="text" name="effectDateRange" class="daterange1" value="" /> <b class="caret_icon"></b>
+                                    </div>
+                                </div>
+                            </div>
+                            <article class="analyseContent">
+                                <div class="analyseUl">
+                                    <ul class="team_list analyseList" id="radio1">
+                                        <li class="purchasing">覆盖会员</li>
+                                        <li value="1">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            目标会员数：
+                                            <span class="screenNum" id="memberCount">0</span>
+                                        </a>
+                                        </li>
+                                        <li value="2">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            拨打会员数：
+                                            <span class="screenNum" id="successCount">0</span>
+                                        </a>
+                                        </li>
+                                        <li value="3">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            执行率：
+                                            <span class="screenNum" id="successRate">0%</span>
+                                        </a>
+                                        </li>
+                                        <li value="4">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            电话成本（元）：
+                                            <span class="screenNum" id="callCost">0%</span>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="team_list analyseList ul_member" id="radio1">
+                                        <li value="1">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            接通会员数：
+                                            <span class="screenNum" id="messageCount">0</span>
+                                        </a>
+                                        </li>
+                                        <li value="2">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            接通率：
+                                            <span class="screenNum" id="messageCost">0</span>
+                                        </a>
+                                        </li>
+                                        <li value="3">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            拨打分钟数：
+                                            <span class="screenNum" id="minutesTotal">0</span>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="team_list analyseList" id="radio1">
+                                        <li class="purchasing">复购会员</li>
+                                        <li value="1">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            复购会员数：
+                                            <span class="screenNum" id="rMemberCount">0</span>
+                                            <span class="c_checkBtn">查看</span>
+                                        </a>
+                                        </li>
+                                        <li value="2">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            复购商品数：
+                                            <span class="screenNum" id="rNumber">0</span>
+                                        </a>
+                                        </li>
+                                        <li value="3">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            复购金额（元）：
+                                            <span class="screenNum" id="rCost">0</span>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="team_list analyseList ul_member" id="radio1">
+                                        <li value="1">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            复购总次数：
+                                            <span class="screenNum" id="rGoodsCount">0</span>
+                                        </a>
+                                        </li>
+                                        <li value="2">
+                                            <a href="javascript:void(0);" class="defaultColor">
+                                            客单价（元）：
+                                            <span class="screenNum" id="rUnitPrice">0</span>
+                                        </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <div class="analyseReport">
+                                <div class="message_tab potential">
+                                    <p class="list_title ct_listTitle">效果分析趋势</p>
+                                </div>
+                                <article class="analyseContent table-responsive details main-table">
+                                    <table class="data-table table table-striped" cellspacing="0" id="effectAnalysisTable"></table>
+                                </article>
+                            </div>
+                            <div class="analyseReport">
+                                <div class="message_tab">
+                                    <p class="list_title ct_listTitle">趋势图</p>
+                                </div>
+                                <div style="height:500px" class="histogram">
+                                    <div id="tendencyChart" style="height:500px;width:1000px"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="memberData effectTabs hideBox">
+                            <div class="message_tab message_first">
+                                <p class="list_title ct_listTitle">会员数据</p>
+                                <div class="navbar memberBar" role="navigation">
+                                    <span class="taskBegin">任务开始</span>
+                                    <div class="timeList">
+                                        <a id="detailTime" href="javascript:void(0);" class="timeDrop" data-toggle="dropdown">
+                                        近7天
+                                        <b class="arrow_down"></b>
+                                    </a>
+                                        <ul class="dropdown-menu dropDownList">
+                                            <div class="btn-group span3" id="memberDetailMergeTime" data-toggle="buttons-radio">
+                                                <button type="button" class="btn btn-default btn_five" value="近5天">5天</button>
+                                                <button type="button" class="btn btn-default btn_seven" value="近7天">7天</button>
+                                                <button type="button" class="btn btn-default btn_fifteen" value="近15天">15天</button>
+                                            </div>
+                                        </ul>
+                                    </div>
+                                    <div id="dateRange3" class="btn data-toggle_1">
+                                        <input id="memberDetailDateRange" type="text" name="memberDetailDateRange" class="daterange3" value="" />
+                                        <b class="caret_icon"></b>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="analyseContent table-responsive">
+                                <table id="phoneMarketingMemberData" class="table"></table>
+                            </div>
+                            <div class="message_tab">
+                                <p class="list_title ct_listTitle">门店数据</p>
+                            </div>
+                            <div class="analyseContent table-responsive">
+                                <table id="phoneMarketingStoreData" class="table"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+        <script type="text/javascript" src="common-tools/jQuery-2.2.3/plugins/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/common/authority.js"></script>
+        <script type="text/javascript" src="common-tools/Bootstrap-3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="common-tools/DataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="common-tools/DataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.html5.min.js"></script>
+        <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.colVis.min.js"></script>
+        <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.bootstrap.min.js"></script>
+        <script type="text/javascript" src="common-tools/Moment-2.15.1/moment.js"></script>
+        <script type="text/javascript" src="common-tools/Moment-2.15.1/moment-with-locales.min.js"></script>
+        <script type="text/javascript" src="common-tools/Echarts-3.2.3/echarts.min.js"></script>
+        <script type="text/javascript" src="common-tools/jquery-loading-overlay-1.4.1/src/loadingoverlay.js"></script>
+        <script type="text/javascript" src="js/jquery-md5.js"></script>
+        <script type="text/javascript" src="js/ajaxCommon.js"></script>
+        <script type="text/javascript" src="js/daterangepicker.js"></script>
+        <script type="text/javascript" src="js/phone-marketing/phoneMarketing.js"></script>
+        <script type="text/javascript" src="js/common/leftBar.js"></script>
+    </body>
+
+</html>

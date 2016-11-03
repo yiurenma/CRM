@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>效果统计</title>
+    <link rel="stylesheet" type="text/css" href="common-tools/Bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/Buttons-1.2.2/css/buttons.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/DataTables-1.10.12/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sms-marketing/smsEffect.css">
+    <link rel="stylesheet" type="text/css" href="css/common/leftBar.css"></head>
+<body>
+    <div id="body_container">
+        <aside id="left-aside">
+            <div class="back-drugstore">
+                <div class="back-drugstore-btn">
+                    <span></span>
+                    <p class="back-text">返回药店管理</p>
+                </div>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="view"></i>
+                            总览
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="analyse"></i>
+                            药品分析
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="management"></i>
+                            会员管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li show_blue_line">
+                        <a href="javascript:void(0);" class="leftTextBlue">
+                            <i class="left_icon lb_click_3" id="message"></i> 短信营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="phone"></i>
+                            电话营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="serve"></i>
+                            服务管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="review"></i>
+                            回访记录
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="bill"></i>
+                            账单中心
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="shadowBar"></div>
+        <div class="content">
+            <div id="mm_container">
+                <header class="header">
+                    <div class="crmDescription">
+                        <p>
+                            <span class="bgBack"  onclick ="window.location.href=window.history.back()">
+                                <i class="back_btn"></i>
+                                返回
+                            </span>
+                            <span class="split_line"></span>
+                            <span>效果统计</span>
+                        </p>
+                        <span></span>
+                        <p class="admin_text">系统管理员</p>
+                    </div>
+                </header>
+                <div>
+                    <div class="message_tab message_first">
+                        <p class="list_title ct_listTitle">效果统计</p>
+                    </div>
+                    <article class="countTable analyseContent table-responsive details main-table">
+                        <table  id="smsMarketingSmsEffectTable" class="data-table table table-striped"></table>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/common/authority.js"></script>
+    <script type="text/javascript" src="common-tools/Bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/DataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="common-tools/DataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment.js"></script>
+    <script type="text/javascript" src="common-tools/jquery-loading-overlay-1.4.1/src/loadingoverlay.js"></script>
+    <script type="text/javascript" src="js/jquery-md5.js"></script>
+    <script type="text/javascript" src="js/ajaxCommon.js"></script>
+    <script type="text/javascript" src="js/sms-marketing/smsEffect.js"></script>
+    <script type="text/javascript" src="js/common/leftBar.js"></script>
+</body>
+</html>

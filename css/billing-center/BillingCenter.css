@@ -1,0 +1,778 @@
+body {
+    min-width: 1160px;
+}
+
+#article-content {
+    float: left;
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+.crmDescription {
+    height: 70px;
+    padding: 24px 20px 0 0;
+}
+
+.crmDescription p {
+    font-size: 16px;
+    color: #8aa1ac;
+    display: inline-block;
+}
+
+.admin_text {
+    float: right;
+    margin-right: 20px;
+}
+
+.crmDescription span,
+.update_time span {
+    font-size: 14px;
+    color: #8aa1ac;
+    display: inline-block;
+}
+
+
+/* 时间插件 */
+
+.date {
+    position: relative;
+}
+
+.date>input {
+    height: 31px;
+    width: 260px;
+    text-align: left;
+    padding-left: 10px;
+    border: 1px solid #dce3e6;
+    color: #8aa1ac;
+    background: #edf3f9;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+div.date b.caret_icon {
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    border: 0;
+    background: url('../../images/ic_down.png') center no-repeat;
+}
+
+.sms_message {
+    width: 100%;
+    height: 180px;
+    background: #f9fbfd;
+    padding-right: 20px;
+}
+
+.dataTables_wrapper {
+    padding-right: 20px;
+}
+
+.sms_surplus {
+    width: 49%;
+    height: 180px;
+    float: left;
+    background: #ffffff;
+}
+
+.sms_Telephone .sms_surplus {
+    margin-left: 2%;
+}
+
+.sms_surplus>a {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    margin: 20px 20px;
+    list-style: none;
+    line-height: 30px;
+    color: #8aa1ac;
+    display: table;
+}
+
+.num_message>div {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 24px;
+    color: #324148;
+}
+
+.num_message>div a {
+    font-size: 12px;
+    padding: 0 5px;
+    color: #8aa1ac;
+    cursor: default;
+}
+
+.num_message>div a:focus {
+    text-decoration: none;
+}
+
+.num_message p,
+.Phone_minutes p {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cr_icon {
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    background-image: url('../../images/bills_icon.png');
+    background-repeat: no-repeat;
+    margin-right: 5px;
+    display: table-cell;
+    padding-right: 25px;
+}
+
+.sms_icon {
+    background-position: -4px 2px;
+}
+
+.ph_icon {
+    background-position: -4px -47px;
+}
+
+.roww {
+    height: 50px;
+    margin-top: 40px;
+    padding-right: 20px;
+}
+
+.span1 {
+    float: left;
+    line-height: 30px;
+    font-size: 16px;
+    color: #324148;
+    font-family: "黑体";
+}
+
+.daterange {
+    float: left;
+}
+
+.btn-primary {
+    color: #324148;
+}
+
+.btn-group label {
+    padding: 6px 12px;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.btn-group>.btn {
+    height: 30px;
+    line-height: 18px;
+    width: 60px;
+    vertical-align: middle;
+    background: #fff;
+    /* border: 1px solid #5A6E79 !important; */
+    text-shadow: 0 0 !important;
+    box-shadow: 0 0 !important;
+    /* margin-right: 8px; */
+    margin-left: 0 !important;
+    border: 1px solid #8D9DA5;
+}
+
+.btn-group .btn.active,
+.btn-group .btn:active {
+    color: #fff;
+    background-color: #1989fa;
+    z-index: 2;
+    border-color: #1989fa;
+}
+
+.btn-group input {
+    box-shadow: none;
+    background-image: none;
+    margin: 0 0 0;
+    /* margin-right: 8px; */
+    padding: 8px 16px;
+}
+
+.btn-group>.btn,
+.btn-group>.btn:first-child,
+.btn-group>.btn:last-child {
+    outline: none !important;
+}
+
+.btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.btn-group>.btn:last-child:not(:first-child) {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.btn-group>.btn:first-child,
+.btn-group>.btn:first-child:hover {
+    border-right: 0!important;
+}
+
+.btn-group>.btn:last-child,
+.btn-group>.btn:last-child:hover {
+    border-left: 0!important;
+}
+
+.dateCon>.btn-group>.btn:last-child:hover {
+    color: #1989fa;
+    border: 1px solid #1989fa !important;
+    border-left: 0 !important;
+}
+
+.dateCon>.btn-group>.btn:first-child:hover {
+    color: #1989fa;
+    border: 1px solid #1989fa !important;
+    border-right: 0 !important;
+}
+
+.btn-group>.btn.active,
+.btn-group>.btn:active {
+    border: 1px solid #1989fa;
+}
+
+.dateCon>.btn-group>.btn.active:hover,
+.dateCon>.btn-group>.btn:active:hover {
+    color: #fff;
+}
+
+.btn-group {
+    height: 30px;
+    float: left;
+    white-space: normal;
+}
+
+button .active {
+    background: #1989fa;
+    border: none;
+}
+
+.date span {
+    float: right;
+}
+
+.daterange {
+    display: inline-block;
+    height: 30px;
+    outline: none;
+    margin-left: 10px;
+}
+
+.date li {
+    width: 80px;
+    height: 30px;
+    float: right;
+    list-style: none;
+}
+
+.derive_svg {
+    width: 70px;
+    height: 30px;
+    border: 1px solid #9e8adb;
+    text-align: center;
+    line-height: 30px;
+    background: #eaeff1;
+    color: #9e8adb;
+}
+
+.btn-default {
+    width: 60px;
+    background: #ffffff;
+    outline: none;
+}
+
+
+/*.btn-default:hover{
+    background: #1989fa;
+}*/
+
+.btn-default:active {
+    background: #1989fa;
+}
+
+.btn-group .btn-default .ative {
+    color: red;
+    display: block;
+}
+
+.form-control {
+    border-radius: 5px;
+    background: #ffffff;
+    height: 30px;
+}
+
+.ic_down_buttom {
+    width: 100%;
+    height: 1px;
+    background: #dce3e6;
+}
+
+.btn_time {
+    background: #1989fa;
+}
+
+.dataTables_info {
+    display: none;
+}
+
+.tr_helpmessage {
+    color: #8aa1ac;
+}
+
+div.dataTables_length select {
+    width: 40px;
+    text-align: center;
+}
+
+.paging_simple_numbers {
+    margin-top: 20px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    padding: 0.3em 0.9em;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,
+.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #8aa1ac !important;
+    border: 1px solid #cacaca;
+    background-color: #ffffff;
+    /* W3C */
+}
+
+.dataTables_wrapper .paginate_button img {
+    margin-top: -4px;
+    margin-left: 1px;
+}
+
+.dataTables_wrapper .dataTables_processing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 30px;
+    margin-left: -50%;
+    margin-top: -25px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: white;
+}
+
+.dataTables_wrapper .dataTables_length,
+.dataTables_wrapper .dataTables_filter,
+.dataTables_wrapper .dataTables_info,
+.dataTables_wrapper .dataTables_processing,
+.dataTables_wrapper .dataTables_paginate {
+    color: #333333;
+    margin-top: 10px;
+    text-align: center;
+}
+
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:after {
+    bottom: 20px;
+    display: none;
+}
+
+.dataTables_info {
+    display: none;
+}
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 0;
+}
+
+th,
+td {
+    white-space: nowrap;
+}
+
+div.dataTables_wrapper {
+    margin: 0 auto;
+}
+
+.table {
+    background: #ffffff;
+    width: 100%;
+}
+
+.table tr th,
+.table tr td {
+    font-family: "黑体";
+    font-size: 14px;
+}
+
+.table tr th {
+    font-size: 12px;
+}
+
+
+/* datarangepicker按钮样式 */
+
+.daterangepicker.opensright:after {
+    left: 248px;
+}
+
+.daterangepicker.opensright:before {
+    left: 248px;
+}
+
+.btn-success {
+    width: 70px;
+    height: 30px;
+    color: #fff;
+    background-color: #1989fa;
+    border-color: #1989fa;
+}
+
+.btn-success:hover {
+    border-color: #0d69f7;
+    background-color: #0d69f7;
+    color: #fff;
+}
+
+.btn-success:active,
+.btn-success.active,
+.btn-success:active.focus,
+.btn-success.active:focus,
+.btn-success.focus,
+.btn-success:focus {
+    border-color: #0463c2!important;
+    background-color: #0463c2!important;
+    color: rgba(255, 255, 255, .6)!important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.cancelBtn {
+    width: 70px;
+    height: 30px;
+    background-color: #f9fbfd;
+    border-color: #1989fa;
+    color: #1989fa;
+}
+
+.cancelBtn:hover {
+    border-color: #1989fa;
+    background-color: #1989fa;
+    color: #fff;
+}
+
+.cancelBtn:active,
+.cancelBtn.active,
+.cancelBtn:active.focus,
+.cancelBtn.active:focus,
+.cancelBtn.focus,
+.cancelBtn:focus {
+    border-color: #0d69f7!important;
+    background-color: #0d69f7!important;
+    color: rgba(255, 255, 255, .6)!important;
+    outline: none!important;
+    box-shadow: none!important;
+}
+
+.daterangepicker td.available:hover,
+.daterangepicker th.available:hover {
+    background-color: #f9fbfd;
+    color: #1989fa;
+}
+
+.daterangepicker td.active,
+.daterangepicker td.active:hover {
+    color: #ffffff;
+    background-color: #1989fa;
+}
+
+
+/**datatables开始**/
+
+
+/**表格整体样式开始**/
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    font-size: 12px;
+    color: #8aa1ac;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+    padding: 20px;
+    border-top: 1px solid #dce3e6;
+}
+
+table.dataTable {
+    width: 100%!important;
+    padding: 0 20px 0 20px;
+    margin-top: 0 !important;
+}
+
+.table tr th,
+.table tr td {
+    font-family: "Helvetica";
+    white-space: nowrap;
+    /**禁止文本换行**/
+    font-weight: normal;
+}
+
+.dataTables_scroll {
+    /* padding: 0 20px 0px 20px; */
+    background: #fff;
+}
+
+.dateCon {
+    width: 410px;
+    float: right;
+    margin-right: 96px;
+}
+
+table.dataTable thead .sorting:nth-child(2):after {
+    left: 100px;
+}
+
+table.dataTable thead .sorting:nth-child(3):after {
+    left: 115px;
+}
+
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc_disabled:after {
+    left: 170px;
+}
+
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc_disabled:after {
+    left: 70px;
+}
+
+
+/**表格整体样式结束**
+/**分页按钮样式开始**/
+
+.pagination>.disabled>a,
+.pagination>.disabled>a:focus,
+.pagination>.disabled>a:hover {
+    color: #8aa1ac;
+    cursor: not-allowed;
+    background-color: #fafafa;
+    border-color: #dce3e6;
+}
+
+.pagination>.active>a,
+.pagination>.active>a:focus,
+.pagination>.active>a:hover {
+    z-index: 3;
+    color: #8aa1ac;
+    cursor: default;
+    background-color: #fafafa;
+    border-color: #dce3e6;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: 10px;
+    line-height: 1.42857143;
+    color: #8aa1ac;
+    text-decoration: none;
+    background-color: #edf3f9;
+    /*正常颜色*/
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    outline: none;
+}
+
+.pagination>li>a:active,
+.pagination>li>span:active {
+    color: #8aa1ac;
+    background-color: #d8dfe6;
+    border-color: #d8dfe6;
+}
+
+.pagination>li>a,
+.pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: 10px;
+    line-height: 1.42857143;
+    color: #8aa1ac;
+    text-decoration: none;
+    background-color: #edf3f9;
+    /*正常颜色*/
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    outline: none;
+    border: 1px solid #d8dfe6;
+}
+
+.pagination>li>a:hover {
+    color: #324148;
+    background-color: #edf3f9;
+    border-color: #d8dfe6;
+}
+
+.pagination>li>a:active,
+.pagination>li>span:active {
+    color: #8aa1ac;
+    background-color: #d8dfe6;
+    border-color: #d8dfe6;
+}
+
+img {
+    vertical-align: baseline;
+}
+
+
+/**分页按钮样式结束**/
+
+
+/**每页显示数量开始**/
+
+.dataTables_length {
+    margin-top: 10px;
+    color: #8aa1ac;
+    text-align: center;
+}
+
+.dataTables_length label {
+    color: #8aa1ac;
+    float: left;
+    font-weight: 100;
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+    width: 60px;
+    height: 34px;
+    display: inline-block;
+    background: #edf3f9;
+}
+
+select.form-control {
+    border: 1px solid #ccc;
+    -webkit-box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 0px 0px rgba(0, 0, 0, .075);
+}
+
+select.form-control.input-sm {
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    color: #8aa1ac;
+}
+
+
+/* 导出CSV*/
+
+.table-responsive {
+    overflow: visible;
+}
+
+.dataTables_wrapper {
+    position: relative;
+}
+
+.dt-buttons {
+    position: absolute;
+    right: 21px;
+    top: -50px;
+    margin-left: 0;
+    width: 76px;
+    overflow: visible;
+    height: 30px;
+    line-height: 30px;
+}
+
+.table-responsive .dt-buttons .buttons-html5,
+.table-responsive .dt-buttons .buttons-colvis {
+    border-top-left-radius: 2px !important;
+    border-bottom-left-radius: 2px !important;
+    border-top-right-radius: 2px !important;
+    border-bottom-right-radius: 2px !important;
+}
+
+.dt-buttons .btn-default {
+    width: 76px;
+    height: 30px;
+    line-height: 18px;
+    border: 1px solid #9e8adb !important;
+    background-color: #f0effa;
+    color: #9e8adb;
+    font-size: 12px;
+    border-radius: 2px !important;
+}
+
+.btn-group>.btn.btn-default {
+    border-left: 1px solid #9e8adb !important;
+    border-right: 1px solid #9e8adb !important;
+}
+
+.table-responsive .btn-group>.btn:first-child:not(:last-child):not(.dropdown-toggle) {
+    margin-right: 20px;
+}
+
+.btn-group>.btn:last-child:not(:first-child) {
+    margin-right: 15px;
+}
+
+.dt-buttons .btn-default:hover {
+    color: #fff;
+    background: #9e8adb;
+}
+
+.dt-buttons .btn-default:active,
+.dt-buttons .btn-default:active,
+.dt-buttons .btn-default:focus,
+.dt-buttons .btn-default.focus,
+.dt-buttons .btn-default.active.focus,
+.dt-buttons .btn-default.active:focus,
+.dt-buttons .btn-default.active:hover,
+.dt-buttons .btn-default:active.focus,
+.dt-buttons .btn-default:active:focus,
+.dt-buttons .btn-default:active:hover,
+.dt-buttons .btn.active.focus,
+.dt-buttons .btn.active:focus,
+.dt-buttons .btn.focus,
+.dt-buttons .btn:active.focus,
+.dt-buttons .btn:active:focus,
+.dt-buttons .btn:focus {
+    color: rgba(255, 255, 255, .6);
+    background-color: #927dd5;
+    box-shadow: none;
+    border-color: #927dd5;
+    outline: none;
+}
+
+
+/* 导出CSV样式结束 */
+
+
+/**每页显示数量结束**/
+
+
+/**刷选框开始**/
+
+
+/**刷选框结束**/

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>回访记录</title>
+    <link rel="stylesheet" type="text/css" href="common-tools/Bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/DataTables-1.10.12/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/common/leftBar.css">
+    <link rel="stylesheet" type="text/css" href="css/call-record/CallRecord.css">
+</head>
+
+<body>
+    <div id="container">
+        <aside id="left-aside">
+            <div class="back-drugstore">
+                <div class="back-drugstore-btn">
+                    <span></span>
+                    <p class="back-text">返回药店管理</p>
+                </div>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="view"></i> 总览
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="analyse"></i> 药品分析
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="management"></i> 会员管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="message"></i> 短信营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="phone"></i> 电话营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="serve"></i> 服务管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li show_blue_line">
+                        <a href="javascript:void(0);" class="leftTextBlue ">
+                            <i class="left_icon lb_click_6" id="review"></i> 回访记录
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="bill"></i> 账单中心
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="shadowBar"></div>
+        <div class="content">
+            <article id="article-content">
+                <div class="crmDescription">
+                    <p>CRM>回访记录</p>
+                    <span>功能描述：查看短信发送记录及电话拨打记录</span>
+                    <p class="admin_text">系统管理员</p>
+                </div>
+                <!--切换标签页开始-->
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active">
+                        <a href="#smsMarketing" data-toggle="tab" class="tabsChange">
+                            <i class="cr_icon click_0" id="sms_icon"></i> 短信营销
+                            <span class="m_slide_block blue_block"></span>
+                            <span class="split_line"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#phoneMarketing" data-toggle="tab" class="tabsChange">
+                            <i class="cr_icon" id="ph_icon"></i> 电话营销
+                            <span class="m_slide_block slide-two blue_block hideBox"></span>
+                        </a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="smsMarketing">
+                        <div class="ic_down_buttom"></div>
+                        <div class="roww time">
+                            <p class="span1">数据表</p>
+                            <div class="dateCon">
+                                <div class="btn-group" id="smsMergeTime" data-toggle="buttons">
+                                    <label class="btn btn-primary active">
+                                        <input type="radio" autocomplete="off" checked value="week">周</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked value="month">月</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked value="year">年</label>
+                                </div>
+                                <div class="date span2">
+                                    <input id="smsDateRange" type="text" name="smsDateRange" class="smsDateRange" value="" />
+                                    <b class="caret_icon"></b>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="smsMarketingTable" class="table" cellspacing="0" width="100%"></table>
+                    </div>
+                    <div class="tab-pane fade" id="phoneMarketing">
+                        <div class="ic_down_buttom"></div>
+                        <div class="roww time">
+                            <div class="span1">数据表</div>
+                            <div class="dateCon">
+                                <div class="btn-group" id="phoneMergeTime" data-toggle="buttons">
+                                    <label class="btn btn-primary active">
+                                        <input type="radio" autocomplete="off" checked value="week">周</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked value="month">月</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked value="year">年</label>
+                                </div>
+                                <div class="date span2">
+                                    <input id="phoneDateRange" type="text" name="phoneDateRange" class="phoneDateRange" value="" />
+                                    <b class="caret_icon"></b>
+                                </div>
+                            </div>
+                        </div>
+                        <table id="phoneMarketingTable" class="table" cellspacing="0" width="100%"></table>
+                    </div>
+                </div>
+                <!--切换标签页结束-->
+            </article>
+        </div>
+    </div>
+</body>
+
+<script type="text/javascript" src="common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="common-tools/jQuery-2.2.3/plugins/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/common/authority.js"></script>
+<script type="text/javascript" src="common-tools/Bootstrap-3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="common-tools/DataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="common-tools/DataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" src="common-tools/Buttons-1.2.2/js/dataTables.buttons.min.js"></script>
+<script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.html5.min.js"></script>
+<script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.colVis.min.js"></script>
+<script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.bootstrap.min.js"></script>
+<script type="text/javascript" src="common-tools/Moment-2.15.1/moment.js"></script>
+<script type="text/javascript" src="common-tools/Moment-2.15.1/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="common-tools/jquery-loading-overlay-1.4.1/src/loadingoverlay.js"></script>
+<script type="text/javascript" src="js/jquery-md5.js"></script>
+<script type="text/javascript" src="js/ajaxCommon.js"></script>
+<script type="text/javascript" src="js/daterangepicker.js"></script>
+<script type="text/javascript" src="js/call-record/CallRecord.js"></script>
+<script type="text/javascript" src="js/common/leftBar.js"></script>
+
+</html>

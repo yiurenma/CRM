@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>总览</title>
+    <link rel="stylesheet" type="text/css" href="common-tools/Bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common/leftBar.css">
+    <link rel="stylesheet" type="text/css" href="css/general_view.css">
+    <link rel="stylesheet" type="text/css" href="css/progress.css">
+</head>
+
+<body>
+    <div id="container">
+        <aside id="left-aside">
+            <div class="back-drugstore">
+                <div class="back-drugstore-btn">
+                    <span></span>
+                    <p class="back-text">返回药店管理</p>
+                </div>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="left_bar_li show_blue_line">
+                        <a href="javascript:void(0);" class="leftTextBlue "> <i class="left_icon lb_click_0" id="view"></i> 总览
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="analyse"></i> 药品分析
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="management"></i> 会员管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="message"></i> 短信营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="phone"></i> 电话营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="serve"></i> 服务管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="review"></i> 回访记录
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="bill"></i> 账单中心
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="shadowBar"></div>
+        <div class="content">
+            <article id="article-content">
+                <div class="header">
+                    <div class="crmDescription">
+                        <p>CRM>总览</p>
+                        <span>
+                            功能描述：采用大数据挖掘算法构建H-RFM用户模型，对会员的健康（Health）、最近消费时间（Recency）、消费频率（Frequency）和消费金额（Monetary）进行建模，实现会员智能分类。
+                        </span>
+                        <p class="administrator">系统管理员</p>
+                    </div>
+                    <div class="update_time">
+                        <p>总览</p>
+                        <span class="update_time_span">会员等级计算时间跨度：</span>
+                    </div>
+                </div>
+                <!--重要保持会员-->
+                <div class="member_list">
+                    <div class="member_list_con">
+                        <div class="member_list_item">
+                            <div class="echart_detail" id="radarChart"></div>
+                            <div class="member_grade">
+                                <i class="grade_icon gold_icon"></i>
+                                <p class="title"></p>
+                                <i class="show_info"></i>
+                                <div class="budget" id="budget">
+                                    <div class='budget_hide'>
+                                        <div class='budget_hide'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="descCon">
+                                <div class="member_detail">
+                                    <div class="member_count">
+                                        <p class="member_num">
+                                            <span>人</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">会员人数</p>
+                                            <div class="progress glyphicon_per" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar progress-bar-success membership" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text m_counts"></span>
+                                        </div>
+                                    </div>
+                                    <div class="expenditure_list">
+                                        <p class="member_num">
+                                            <span>元</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">消费金额</p>
+                                            <div class="progress glyphicon_per" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar progress-bar-success mollis_euismod" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text e_counts"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="operat_etactics">
+                                    <p>定义描述</p>
+                                    <ol class="description"></ol>
+                                </div>
+                            </div>
+                            <div class="show_details">
+                                <a href="#" class="detail_btn navyblue_btn">查看详情</a>
+                            </div>
+                        </div>
+                        <!--重要发展会员-->
+                        <div class="member_list_item">
+                            <div class="echart_detail" id="radarChart"></div>
+                            <div class="member_grade">
+                                <i class="grade_icon sliver_icon"></i>
+                                <p class="title"></p>
+                                <i class="show_info"></i>
+                                <div class="budget" id="budget">
+                                    <div class='budget_hide'>
+                                        <div class='budget_hide'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="descCon">
+                                <div class="member_detail">
+                                    <div class="member_count">
+                                        <p class="member_num">
+                                            <span>人</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">会员人数</p>
+                                            <!--  进度条 -->
+                                            <div class="progress aria-valuemin" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar Better_check membership" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text m_counts"></span>
+                                        </div>
+                                    </div>
+                                    <!--  进度条-->
+                                    <div class="expenditure_list">
+                                        <p class="member_num">
+                                            <span>元</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">消费金额</p>
+                                            <div class="progress aria-valuemin" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar Better_check mollis_euismod" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text e_counts"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="operat_etactics">
+                                    <p>定义描述</p>
+                                    <ol class="description"></ol>
+                                </div>
+                            </div>
+                            <div class="show_details">
+                                <a href="#" class="detail_btn lightblue_btn">查看详情</a>
+                            </div>
+                        </div>
+                        <!--重要挽留会员-->
+                        <div class="member_list_item">
+                            <div class="echart_detail"></div>
+                            <div class="member_grade">
+                                <i class="grade_icon bronze_icon"></i>
+                                <p class="title"></p>
+                                <i class="show_info"></i>
+                                <div class="budget" id="budget">
+                                    <div class='budget_hide'></div>
+                                </div>
+                            </div>
+                            <div class="descCon">
+                                <div class="member_detail">
+                                    <div class="member_count">
+                                        <p class="member_num">
+                                            <span>人</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">会员人数</p>
+                                            <div class="progress form-group" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar dropdown-toggle membership" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text m_counts"></span>
+                                        </div>
+                                    </div>
+                                    <div class="expenditure_list">
+                                        <p class="member_num">
+                                            <span>元</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">消费金额</p>
+                                            <div class="progress form-group" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar dropdown-toggle mollis_euismod" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text e_counts"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="operat_etactics">
+                                    <p>定义描述</p>
+                                    <ol class="description"></ol>
+                                </div>
+                            </div>
+                            <div class="show_details">
+                                <a href="#" class="detail_btn green_btn">查看详情</a>
+                            </div>
+                        </div>
+                        <!--一般重要会员-->
+                        <div class="member_list_item second_line_item">
+                            <div class="echart_detail"></div>
+                            <div class="member_grade">
+                                <p class="title"></p>
+                                <i class="show_info"></i>
+                                <div class="budget" id="budget">
+                                    <div class='budget_hide'></div>
+                                </div>
+                            </div>
+                            <div class="descCon">
+                                <div class="member_detail">
+                                    <div class="member_count">
+                                        <p class="member_num">
+                                            <span>人</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">会员人数</p>
+                                            <div class="progress primary" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar menuitem membership" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text m_counts"></span>
+                                        </div>
+                                    </div>
+                                    <div class="expenditure_list">
+                                        <p class="member_num">
+                                            <span>元</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">消费金额</p>
+                                            <div class="progress primary" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar menuitem mollis_euismod" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style=" ">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text e_counts"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="operat_etactics">
+                                    <p>定义描述</p>
+                                    <ol class="description"></ol>
+                                </div>
+                            </div>
+                            <div class="show_details">
+                                <a href="#" class="detail_btn purple_btn">查看详情</a>
+                            </div>
+                        </div>
+                        <div class="member_list_item second_line_item">
+                            <div class="echart_detail"></div>
+                            <div class="member_grade">
+                                <p class="title"></p>
+                                <i class="show_info"></i>
+                                <div class="budget" id="budget">
+                                    <div class='budget_hide'>
+                                        <div class='budget_hide'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="descCon">
+                                <div class="member_detail">
+                                    <div class="member_count">
+                                        <p class="member_num">
+                                            <span>人</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">会员人数</p>
+                                            <div class="progress default_navbar" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar contact membership" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text m_counts"></span>
+                                        </div>
+                                    </div>
+                                    <div class="expenditure_list">
+                                        <p class="member_num">
+                                            <span>元</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">消费金额</p>
+                                            <div class="progress default_navbar" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar contact mollis_euismod" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text e_counts"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="operat_etactics">
+                                    <p>定义描述</p>
+                                    <ol class="description"></ol>
+                                </div>
+                            </div>
+                            <div class="show_details">
+                                <a href="#" class="detail_btn pink_btn">查看详情</a>
+                            </div>
+                        </div>
+                        <div class="member_list_item second_line_item">
+                            <div class="echart_detail"></div>
+                            <div class="member_grade">
+                                <p class="title"></p>
+                                <i class="show_info"></i>
+                                <div class="budget" id="budget">
+                                    <div class='budget_hide'>
+                                        <div class='budget_hide'></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="descCon">
+                                <div class="member_detail">
+                                    <div class="member_count">
+                                        <p class="member_num">
+                                            <span>人</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">会员人数</p>
+                                            <div class="progress navigation" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar aria-valuen membership" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text m_counts"></span>
+                                        </div>
+                                    </div>
+                                    <div class="expenditure_list">
+                                        <p class="member_num">
+                                            <span>元</span>
+                                        </p>
+                                        <div class="member_monery">
+                                            <p class="member_text">消费金额</p>
+                                            <div class="progress navigation" style="width:40%; margin:0 auto;">
+                                                <div class="progress-bar aria-valuen  mollis_euismod" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="">
+                                                    <span class="sr-only">40% 完成</span>
+                                                </div>
+                                            </div>
+                                            <span class="member_text e_counts"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="operat_etactics">
+                                    <p>定义描述</p>
+                                    <ol class="description"></ol>
+                                </div>
+                            </div>
+                            <div class="show_details">
+                                <a href="#" class="detail_btn red_btn">查看详情</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/common/authority.js"></script>
+    <script type="text/javascript" src="common-tools/store.js-master/store.min.js"></script>
+    <script type="text/javascript" src="common-tools/Bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/Echarts-3.2.3/echarts.min.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="common-tools/jquery-loading-overlay-1.4.1/src/loadingoverlay.js"></script>
+    <script type="text/javascript" src="js/common/leftBar.js"></script>
+    <script type="text/javascript" src="js/jquery-md5.js"></script>
+    <script type="text/javascript" src="js/ajaxCommon.js"></script>
+    <script type="text/javascript" src="js/general-view/general_view.js"></script>
+</body>
+
+</html>

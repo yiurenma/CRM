@@ -1,0 +1,16 @@
+<html>
+<body>
+
+	<div id="1">
+		这是段落。
+		<div class="2">2222</div>
+	</div>
+	<p>这是段落。</p>
+	<p>这是段落。</p>
+
+	<p>段落元素由 p 标签定义。</p>
+
+</body>
+	<script type="text/javascript" src="common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+	<script>alert($("#1").find("div[class$='2']").text());</script>
+</html>

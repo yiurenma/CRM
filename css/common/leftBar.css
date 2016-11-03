@@ -1,0 +1,195 @@
+html,
+body,
+div,
+p,
+ul,
+ol,
+li,
+a,
+span {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body,
+#container {
+    width: 100%;
+    height: 100%;
+    background: #f9fbfd;
+}
+
+.content {
+    margin-left: 204px;
+}
+
+div,
+span,
+ul {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:focus {
+    color: #1989fa;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* aside-left */
+
+#left-aside {
+    width: 184px;
+    height: 100%;
+    background-color: #ffffff;
+    float: left;
+}
+
+.shadowBar {
+    position: absolute;
+    left: 184px;
+    width: 20px;
+    /* height: 100%; */
+    background-image: url('../../images/bg_shadow.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.back-drugstore {
+    height: 106px;
+}
+
+.back-drugstore-btn {
+    margin-top: 24px;
+    margin-left: 20px;
+    color: #868faf;
+    font-size: 1em;
+}
+
+.back-drugstore-btn span {
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 5px;
+    vertical-align: middle;
+    background: url('../../images/left_bar_icon.png') 0 -60px;
+}
+
+.back-text {
+    display: inline-block;
+    font-size: 16px;
+    color: #878F9D;
+}
+
+.nav-ul li {
+    height: 42px;
+    line-height: 41px;
+    background-repeat: no-repeat;
+}
+
+.left_bar_li a {
+    font-size: 16px;
+    color: #878F9D;
+    display: inline-block;
+    margin-left: 24px;
+    font-weight: bolder;
+}
+
+.left_bar_li a:hover {
+    color: #1989fa;
+}
+
+.leftTextBlue {
+    color: #1989fa!important;
+}
+
+.left_icon {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background: no-repeat;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-image: url('../../images/left_bar_icon.png');
+    background-repeat: no-repeat;
+}
+
+#view {
+    background-position: 0 -493px;
+}
+
+.lb_click_0 {
+    background-position: 0 -520px !important;
+}
+
+#analyse {
+    background-position: 0 -385px;
+}
+
+.lb_click_1 {
+    background-position: 0 -412px !important;
+}
+
+#management {
+    background-position: 0 -331px;
+}
+
+.lb_click_2 {
+    background-position: 0 -358px !important;
+}
+
+#message {
+    background-position: 0 -168px;
+}
+
+.lb_click_3 {
+    background-position: 0 -195px !important;
+}
+
+#phone {
+    background-position: 0 -114px;
+}
+
+.lb_click_4 {
+    background-position: 0 -141px !important;
+}
+
+#serve {
+    background-position: 0 -222px;
+}
+
+.lb_click_5 {
+    background-position: 0 -249px !important;
+}
+
+#review {
+    background-position: 0 -277px;
+}
+
+.lb_click_6 {
+    background-position: 0 -304px !important;
+}
+
+#bill {
+    background-position: 0 -438px;
+}
+
+.lb_click_7 {
+    background-position: 0 -465px !important;
+}
+
+.show_blue_line {
+    background-image: url('../../images/left_bar_icon.png');
+    background-position: 0 -6px;
+    background-repeat: no-repeat;
+}

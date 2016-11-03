@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>短信营销</title>
+    <link rel="stylesheet" type="text/css" href="common-tools/Bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/Buttons-1.2.2/css/buttons.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/DataTables-1.10.12/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/Select-1.2.0/css/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/sms-marketing/messageMarket.css">
+    <link rel="stylesheet" type="text/css" href="css/common/leftBar.css">
+</head>
+
+<body>
+    <div id="body_container">
+        <aside id="left-aside">
+            <div class="back-drugstore">
+                <div class="back-drugstore-btn">
+                    <span></span>
+                    <p class="back-text">返回药店管理</p>
+                </div>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="view"></i> 总览
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="analyse"></i> 药品分析
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="management"></i> 会员管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li show_blue_line">
+                        <a href="javascript:void(0);"  class="leftTextBlue">
+                            <i class="left_icon lb_click_3" id="message"></i> 短信营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="phone"></i> 电话营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="serve"></i> 服务管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="review"></i> 回访记录
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="bill"></i> 账单中心
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="shadowBar"></div>
+        <div class="content">
+            <div id="mm_container">
+                <header class="header">
+                    <div class="crmDescription">
+                        <p>CRM>短信营销</p>
+                        <span></span>
+                        <p class="admin_text">系统管理员</p>
+                    </div>
+                    <nav class="message_nav">
+                        <ul>
+                            <li class="messageTabs">
+                                <a href="javascript:void(0);" class="tabChecked curFlag tabsbtn" data-index="0">
+                                    <i class="mm_nav_icon click_0" id="quick_icon"></i> 快速选择
+                                    <span></span>
+                                </a>
+                                <a href="javascript:void(0);" data-index="1" class="tabsbtn">
+                                    <i class="mm_nav_icon" id="member_icon"></i> 会员筛选
+                                </a>
+                                <a href="javascript:void(0);" class="count_btn" data-index="3">
+                                    <i class="mm_nav_icon count_icon" id="impressionCount"></i> <b>效果统计</b>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="m_slide_box">
+                                    <div class="m_slide_block blue_block"></div>
+                                    <div class="m_slide_block blue_block hideBox"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+                <div class="mm_content">
+                    <!-- quickSelect -->
+                    <article id="quickSelecting" class="article_content">
+                        <div class="message_tab message_first">
+                            <p class="list_title">选择分组</p>
+                        </div>
+                        <ul class="quickSelect">
+                            <li>
+                                <div class="btn-group quickList" data-toggle="buttons" id="groupList">
+                                    <div class="queueList">
+                                        <div class="span1 row-subkey quickQueue myGroup">我的分组</div>
+                                        <div class="btn-group quickList" id="myGroup"></div>
+                                    </div>
+                                    <div class="queueList">
+                                        <div class="span1 row-subkey quickQueue sysGroup">系统分组</div>
+                                        <div class="btn-group quickList" id="sysGroup"></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <div class="clearfix"></div>
+                            <li class="hideBox filterList" id="filterList0">
+                                <div class="span1 row-subkey">已发过滤</div>
+                                <div class="btn-group" data-toggle="buttons">
+                                    <label class="btn btn-primary active">
+                                        <input type="radio" autocomplete="off" checked data-name="不过滤">不过滤</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked data-name="今天">今天</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked data-name="近7天">近7天</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked data-name="近30天">近30天</label>
+                                    <label class="btn btn-primary userDefine">
+                                        <input type="radio" autocomplete="off" checked data-name="自定义">自定义</label>
+                                    <div class="date span10 hideBox userRange click1">
+                                        近
+                                        <input type="number" class="quickDate" min="0" value="0">&nbsp;天</div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="operate_btn quickBtns">
+                            <div>
+                                <a href="javascript:void(0);" class="mm_btn  gray_btn screening" id="screen0">筛选</a>
+                                <a href="javascript:void(0);" class="mm_btn next_btn hideBox" id="next0">下一步</a>
+                                <a href="javascript:void(0);" class="mm_btn clear_btn" id="clear0">清空</a>
+                            </div>
+                        </div>
+                        
+                    </article>
+                    <!-- memberTab -->
+                    <article id="memberScreening" class="memberTab article_content hideBox">
+                        <div class="message_tab message_first">
+                            <p class="list_title">筛查条件</p>
+                        </div>
+                        <ul class="memberScreen checkbox" id="checkbox1" nonevalue="0" othervalue="9">
+                            <li>
+                                <div class="span1 row-subkey">消费属性</div>
+                                <div class="btn-group check_box" data-toggle="buttons">
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="cLastTime">最近消费时间</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="cCount">消费次数</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="cTotalMoney">累计金额</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="cUnitPrice">平均客单价</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="goodsList">指定商品</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="cBranchStoreList">最近消费门店</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="span1 row-subkey">健康属性</div>
+                                <div class="btn-group check_box" data-toggle="buttons">
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off">高血压类</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off">糖尿病类</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off">高血脂类</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off">合并类</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="hLastTime">最近测量时间</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="hCount">测量总次数</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="hBpCount">血压测量次数</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="hBsCount">血糖测量次数</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="hBranchStoreList">最近测量门店</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off">个人版设备</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="span1 row-subkey">会员属性</div>
+                                <div class="btn-group check_box" data-toggle="buttons">
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="isMember">连锁会员</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="rfmLevel">客户等级</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="customTagList">标签</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="age">年龄</label>
+                                    <label class="btn btn-primary">
+                                        <input type="checkbox" autocomplete="off" data-name="gender">性别</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="memberTerms hideBox">
+                            <div class="message_tab">
+                                <p>已选择条件</p>
+                            </div>
+                            <div class="chooseTerms">
+                                <ul class="termsList">
+                                    <li class="hideBox noMargin">
+                                        <div class="span1 row-subkey" data-name="cLastTime">
+                                            最近
+                                            <br/> 消费时间
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="近7天">近7天</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="近1个月">近1个月</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="近3个月">近3个月</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="自定义">自定义</label>
+                                            <div class="date span10 hideBox userRange click1">
+                                                <input id="dateRange" type="text" name="daterange" class="self1" style="padding-left: 170px; width:200px">
+                                                <b class="caret"></b>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox">
+                                        <div class="span1 row-subkey" data-name="cCount">消费次数</div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="0-0">0次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="1-1">1次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="2-2">2次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="3-">3次及以上</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="userDefined">自定义</label>
+                                            <div class="date span00 hideBox">
+                                                <input type="number" class="startNum" min="0" value="1"> --
+                                                <input type="number" class="endNum" min="0" value="1">&nbsp;次</div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="cTotalMoney">累计金额</div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="1-100">1-100</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="100-200">100-200</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="200-300">200-300</label>
+                                            <label class="btn btn-primary" >
+                                                <input type="radio" autocomplete="off" data-name="300-">300及以上</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="userDefined">自定义</label>
+                                            <div class="date span00 hideBox">
+                                                <input type="number" class="startNum" min="0" value="1"> --
+                                                <input type="number" class="endNum" min="0" value="100">&nbsp;元</div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child noMargin">
+                                        <div class="span1 row-subkey" data-name="cUnitPrice">
+                                            平均
+                                            <br/> 客单价
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="1-100">1-100</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="100-200">100-200</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="200-300">200-300</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="300-">300及以上</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="userDefined">自定义</label>
+                                            <div class="date span00 hideBox">
+                                                <input type="number" class="startNum" min="0" value="1"> --
+                                                <input type="number" class="endNum" min="0" value="100">&nbsp;元</div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child chooseTop noMargin" id="goodsList">
+                                        <div class="span1 row-subkey chooseSth" data-name="goodsList">指定商品</div>
+                                        <!-- Modal -->
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary" data-toggle="modal" data-target="#chooseGoods">
+                                                <input id="choose" type="checkbox" autocomplete="off" checked>选择</label>
+                                            <div class="modal fade" id="chooseGoods" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title" id="myModalLabel">选择药品</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="left_table">
+                                                                    <p>药品库</p>
+                                                                    <table id="importantGoodsTable" class="table"></table>
+                                                                </div>
+                                                                <div class="right_list">
+                                                                    <p>已选择菜单选项</p>
+                                                                    <div class="selectedItem">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn taskConfirm" onclick="chosenGoods()">确认</button>
+                                                            <button type="button" class="btn btn-secondary taskCancel" data-dismiss="modal">取消</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete chooseDel">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child chooseTop noMargin" id="cBranchStoreList">
+                                        <div class="span1 row-subkey chooseSth" data-name="cBranchStoreList">
+                                            最近
+                                            <br/> 消费门店
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary" data-toggle="modal" data-target="#chooseBranchStoreList">
+                                                <input id="choose" type="checkbox" autocomplete="off" checked>选择</label>
+                                            <div class="modal fade" id="chooseBranchStoreList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title" id="myModalLabel">选择药店</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="store_left left_table">
+                                                                    <p>门店</p>
+                                                                    <table id="branchStoreTable" class="table"></table>
+                                                                </div>
+                                                                <div class="right_list">
+                                                                    <p>已选择菜单选项</p>
+                                                                    <div class="selectedItem">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn taskConfirm" onclick="chosenBranchStore()">确认</button>
+                                                            <button type="button" class="btn btn-secondary taskCancel" data-dismiss="modal">取消</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete chooseDel">删除</a>
+                                    </li>
+                                    <!--健康属性开始-->
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="highPressureType">
+                                            高血压类
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="hasHtn" data-bool="true">高血压 （不限等级）</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="hasHtnHigh" data-bool="true">血压正常高值</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="hasHtnLevel1" data-bool="true">1级高血压（轻度）</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="hasHtnLevel2" data-bool="true">2级高血压（中度）</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="hasHtnLevel3" data-bool="true">3级高血压（重度）</label>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="diabetesType">
+                                            糖尿病类
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="hasDm" data-bool="true">糖尿病（不限类型）</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="hasDm1" data-bool="true">1型糖尿病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="hasDm2" data-bool="true">2型糖尿病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="hasDmIgr" data-bool="true">糖调节受损</label>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="hyperlipemiaType">
+                                            高血脂类
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="hasAbl" data-bool="true">高血脂</label>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+
+                                    <li class="hideBox check_child mergeClass">
+                                        <div class="span1 row-subkey" data-name="combineType">
+                                            合并类
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="htnComplDm" data-bool="true">高血压合并糖尿病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="htnComplCd" data-bool="true">高血压合并心脑血管疾病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="htnComplKidney" data-bool="true">高血压合并慢性肾脏疾病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="htnComplDmg" data-bool="true">高血压合并妊娠期糖尿病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="htnComplAbl" data-bool="true">高血压合并高血脂</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="dmComplDmg" data-bool="true">糖尿病合并妊娠</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="dmComplKidney" data-bool="true">糖尿病合并慢性肾脏疾病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="dmComplCd" data-bool="true">糖尿病合并心脑血管疾病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="dmComplEye" data-bool="true">糖尿病合并眼病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="dmComplNeuropathy" data-bool="true">糖尿病合并神经病变</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="dmComplFoot" data-bool="true">糖尿病合并足病</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="dmComplAbl" data-bool="true">糖尿病合并高血脂 </label>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+
+                                    <li class="hideBox check_child noMargin">
+                                        <div class="span1 row-subkey" data-name="hLastTime">
+                                            最近
+                                            <br/> 测量时间
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="近7天">近7天</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="近1个月">近1个月</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="近3个月">近3个月</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="自定义">自定义</label>
+                                            <div class="date span10 hideBox userRange click1">
+                                                <input id="dateRange" type="text" name="daterange" class="self2" style="padding-left: 170px; width:200px">
+                                                <b class="caret"></b>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+
+
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="hCount">
+                                            测量
+                                            <br/>总次数
+                                         </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="0-0">0次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="1-1">1次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="2-2">2次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="3-">3次及以上</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="userDefined">自定义</label>
+                                            <div class="date span00 hideBox">
+                                                <input type="number" class="startNum" min="0" value="0"> --
+                                                <input type="number" class="endNum" min="0" value="1">&nbsp;次</div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+
+                                    <li class="hideBox check_child noMargin">
+                                        <div class="span1 row-subkey" data-name="pressureMeasureTimes">
+                                            血压
+                                            <br/>测量次数
+                                         </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="0-0">0次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="1-1">1次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="2-2">2次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="3-">3次及以上</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="userDefined">自定义</label>
+                                            <div class="date span00 hideBox">
+                                                <input type="number" class="startNum" min="0" value="0"> --
+                                                <input type="number" class="endNum" min="0" value="1">&nbsp;次</div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="bloodSugarMeasureTimes">
+                                            血糖
+                                            <br/>测量次数
+                                         </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="0-0">0次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="1-1">1次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="2-2">2次</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="3-">3次及以上</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="userDefined">自定义</label>
+                                            <div class="date span00 hideBox">
+                                                <input type="number" class="startNum"  min="0" value="0"> --
+                                                <input type="number" class="endNum"  min="0" value="1">&nbsp;次</div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+
+                                    <li class="hideBox check_child chooseTop noMargin" id="hBranchStoreList">
+                                        <div class="span1 row-subkey chooseSth" data-name="hBranchStoreList">
+                                            最近
+                                            <br/>
+                                            测量门店
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary" data-toggle="modal" data-target="#chooseMeasureBranchStoreList">
+                                                <input id="choose" type="checkbox" autocomplete="off" checked>选择</label>
+                                            <div class="modal fade" id="chooseMeasureBranchStoreList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title" id="myModalLabel">选择药店</h4>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="row">
+                                                                <div class="store_left left_table">
+                                                                    <p>门店</p>
+                                                                    <table id="measureBranchStoreTable" class="table"></table>
+                                                                </div>
+                                                                <div class="right_list">
+                                                                    <p>已选择菜单选项</p>
+                                                                    <div class="selectedItem">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn taskConfirm" onclick="chosenMeasureBranchStore()">确认</button>
+                                                            <button type="button" class="btn btn-secondary taskCancel" data-dismiss="modal">取消</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete chooseDel">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child noMargin">
+                                        <div class="span1 row-subkey">
+                                            个人
+                                            <br/> 版设备
+                                        </div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="checkbox" autocomplete="off" checked data-name="hasBpDevice" data-bool="true">蓝信康个人版血压计</label>
+                                            <label class="btn btn-primary">
+                                                <input type="checkbox" autocomplete="off" data-name="hasBsDevice" data-bool="true">蓝信康个人版血糖仪</label>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <!--健康属性结束-->
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="isMember">连锁会员</div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="true">会员</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="false">非会员</label>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="rfmLevel">会员等级</div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="1">重要保持会员</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="2">重要发展会员</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="3">重要挽留会员</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="4">一般重要会员</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="5">一般会员</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="6">无价值会员</label>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="customTagList">标签</div>
+                                        <div class="btn-group" data-toggle="buttons" id="tagList"></div>
+                                        <a href="javasccript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="age">年龄</div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="-20">20以下</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="20-60">20-60</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="60-">60以上</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="userDefined">自定义</label>
+                                            <div class="date span00 hideBox">
+                                                <input type="number" class="startNum" min="0" value="0"> --
+                                                <input type="number" class="endNum"  min="0" value="1">&nbsp;岁</div>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox check_child">
+                                        <div class="span1 row-subkey" data-name="gender">性别</div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="1">男</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="2">女</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="0">未知</label>
+                                        </div>
+                                        <a href="javascript:void(0);" class="delete">删除</a>
+                                    </li>
+                                    <li class="hideBox filterList" id="filterList1">
+                                        <div class="span1 row-subkey" data-name="smsLastTime">已发过滤</div>
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" autocomplete="off" checked data-name="不过滤">不过滤</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="今天">今天</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="近7天">近7天</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" autocomplete="off" data-name="近30天">近30天</label>
+                                            <label class="btn btn-primary userDefine">
+                                                <input type="radio" autocomplete="off" data-name="自定义">自定义</label>
+                                            <div class="date span10 hideBox userRange click1">
+                                                近
+                                                <input type="number" id="para" min="0" value="0">&nbsp;天</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="operate_btn memberBtns">
+                            <div>
+                                <a href="javascript:void(0);" class="mm_btn  gray_btn screening" id="screen1">筛选</a>
+                                <a href="javascript:void(0);" class="mm_btn next_btn hideBox" id="next1">下一步</a>
+                                <a href="javascript:void(0);" class="mm_btn clear_btn" id="clear1">清空</a>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- </div>
+                    -->
+                    <!-- marketTab -->
+                    <!-- screening -->
+                    <div class="loadingText hideBox">
+                        <p>努力筛查中，马上就出来了...</p>
+                    </div>
+                    <div class="quickResult hideBox">
+                        <div class="message_tab">
+                            <p>筛查结果</p>
+                        </div>
+                        <div class="resultInfo">
+                            <span class="result_icon wrong_result"></span>
+                            <p>
+                                共筛查出
+                                <span class="screenNum" id="allNum"></span> 名会员，其中有效会员
+                                <span class="screenNum" id="effectNum"></span> 名。(有手机号，已排重)
+                            </p>
+                            <a href="javascript:void(0);" class="checkList">查看</a>
+                            <p class="screenAgain">
+                                为了节省您的成本，会员筛查结果必须
+                                <span class="redText">大于2名</span> 才能进行下一步营销操作，请重新筛查
+                            </p>
+                        </div>
+                    </div>
+                    <!-- memberList -->
+                    <article class="memberList hideBox">
+                        <div class="message_tab">
+                            <p class="list_title ct_listTitle">会员列表</p>
+                        </div>
+                        <div class="analyseContent table-responsive">
+                            <!-- table数据 -->
+                            <table id="memberTable" class="table"></table>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="temp"></div>
+        </div>
+    </div>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/common/authority.js"></script>
+    <script type="text/javascript" src="common-tools/Bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/DataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="common-tools/DataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.colVis.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/Select-1.2.0/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="common-tools/jquery-loading-overlay-1.4.1/src/loadingoverlay.js"></script>
+    <script type="text/javascript" src="js/jquery-md5.js"></script>
+    <script type="text/javascript " src="js/ajaxCommon.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <script type="text/javascript " src="js/sms-marketing/messageMarket.js"></script>
+    <script type="text/javascript " src="js/common/leftBar.js"></script>
+</body>
+
+</html>

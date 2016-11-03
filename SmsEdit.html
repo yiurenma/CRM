@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>短信编辑</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-datetimepicker.min.css">
+    <link rel="stylesheet" href="common-tools/Bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="css/common/leftBar.css">
+    <link rel="stylesheet" type="text/css" href="css/sms-marketing/smsedit.css">
+</head>
+
+<body>
+    <div id="container">
+        <aside id="left-aside">
+            <div class="back-drugstore">
+                <div class="back-drugstore-btn">
+                    <span></span>
+                    <p class="back-text">返回药店管理</p>
+                </div>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="view"></i> 总览
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="analyse"></i> 药品分析
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="management"></i> 会员管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li show_blue_line">
+                        <a href="javascript:void(0);" class="leftTextBlue">
+                            <i class="left_icon lb_click_3" id="message"></i> 短信营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="phone"></i> 电话营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="serve"></i> 服务管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="review"></i> 回访记录
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="bill"></i> 账单中心
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="shadowBar"></div>
+        <div class="content">
+            <div id="mm_container">
+                <header class="header">
+                    <div class="crmDescription">
+                        <p>
+                            <span class="bgBack" onclick="window.location.href=window.history.back()">
+                                <i class="back_btn"></i>
+                                返回
+                            </span>
+                            <span class="split_line"></span>
+                            <span>会员筛选</span>
+                        </p>
+                        <span></span>
+                        <p class="admin_text">系统管理员</p>
+                    </div>
+                </header>
+                <div class="quickResult msgCon">
+                    <div class="message_tab">
+                        <p>筛查结果</p>
+                        <a href="javascript:void(0);" class="count_btn impressionCount">
+                            <i class="mm_nav_icon count_icon" id="impressionCount"></i> <b>效果统计</b>
+                        </a>
+                    </div>
+                    <div class="resultInfo countResult">
+                        <span></span>
+                        <p>
+                            待发送
+                            <span class="screenNum">139</span> 名会员，原
+                            <span class="screenNum">129</span> 名。(有手机号，已排重，已过滤)
+                        </p>
+                    </div>
+                </div>
+                <article class="countTab">
+                    <div class="messageContent">
+                        <ul>
+                            <li>
+                                <span class="category_name">活动名称</span>
+                                <input type="text" class="activeName">
+                            </li>
+                            <li>
+                                <span class="category_name">短信变量</span>
+                                <div class="s_infoLabel smsVar">
+                                <a href="javascript:void(0);" class="mm_btn chain" data-val="chain" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="默认8个字，以实际变量为准" data-html="<div contentEditable='false' id='branchName' class='variable' data-variable='mainStoreName' data-variable-text='蓝信康大药房'>连锁名称</div>">连锁名称</a>
+                                <a href="javascript:void(0);" class="mm_btn store" data-val="store" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="默认4个字，以实际变量为准" data-html="<div contentEditable='false' id='storeName' class='variable' data-variable='branchStoreName' data-variable-text='杨浦店'>门店名称</div>" >门店名称</a>
+                                <a href="javascript:void(0);" class="mm_btn stuff" data-val="stuff" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="默认3个字，以实际变量为准" data-html="<div contentEditable='false' id='employeeName' class='variable' data-variable='employeeRealName' data-variable-text='店员'>店员姓名</div>">店员姓名</a>
+                                <a href="javascript:void(0);" class="mm_btn member" data-val="member" data-toggle="tooltip" data-trigger="hover" data-content="left" data-placement="top" title="默认3个字，以实际变量为准" data-html="<div contentEditable='false' id='memberName' class='variable' data-variable='memberRealName' data-variable-text='张建华'>会员姓名</div>">会员姓名</a>
+                                </div>
+                            </li>
+                            <li class="messageArea">
+                                <span class="category_name">短信内容</span>
+                                <div class="s_infoLabel areaCon">
+                                    <div contentEditable="true" rows="10" cols="50" class="textArea" id="inputWords"></div>
+                                    <p class="inputTitle">
+                                        已输入
+                                        <span class="screenNum" id="wordCounter">0</span> 个字，共计
+                                        <span class="screenNum" id="msgCounter">0</span> 条短信。
+                                        <span class="chargeRule" data-toggle="tooltip" data-placement="top" title="70字计1条短信费，超出70字则以67字每条计费，带变量短信以实际发送为准，有可能超出默认字数">计费规则</span>
+                                    </p>
+                                </div>
+                            </li>
+                            <li class="inTimeSend">
+                                <span class="category_name">定时发送</span>
+                                <span class="checkNo">否</span>
+                                <section class="model-2 chooseTime">
+                                    <div class="checkbox">
+                                        <input id="addTimer" type="checkbox">
+                                        <label></label>
+                                    </div>
+                                </section>
+                                <span>是</span>
+                                <div class="form_con hideBox">
+                                    <div id="datetimepicker" class="input-append date">
+                                        <input id="smsTimer" type="text" disabled="disabled" style="height:30px;">
+                                        <span class="add-on" style="height:30px;">
+                                            <i data-time-icon="icon-time" data-date-icon="icon-calendar"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="category_name">测试手机</span>
+                                <div class="s_label">
+                                    <input type="tel" class="sendNum" maxlength="60" placeholder="可输入5个测试手机号，以逗号“,”隔开，例如:'18686125452,18686125452,'">
+                                    <span data-toggle="tooltip" data-trigger="hover" data-placement="top" title="注意事项：1）因运营商控制短时间内不能对相同的手机号发送多条短信，相同手机号10分钟发送不要超过3条，或可以改用其他手机号测试。2）测试后如遇问题可随时联系蓝信康技术支持人员"><a href="javascript:void(0); " class="clear_btn mm_btn testSend " data-toggle="modal" data-target="#sendTest">测试发送</a></span>
+                                </div>
+                                <!-- dialog -->
+                                <div class="modal fade" id="sendTest" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="sendSucc">
+                                                        <img src="images/ic_czcg.png" alt="">
+                                                        <span class="closeDialog" data-dismiss="modal" aria-hidden="true"></span>
+                                                        <p class="succText">测试发送成功</p>
+                                                    </div>
+                                                    <div class="sendFail hideBox">
+                                                        <img src="images/ic_czsb.png" alt="">
+                                                        <span class="closeDialog" data-dismiss="modal" aria-hidden="true"></span>
+                                                        <p class="succText">测试发送失败</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <span class="category_name"></span>
+                                <section class="model-2 sendFormal chooseSend">
+                                    <div class="checkbox">
+                                        <input id="addTextNum" type="checkbox">
+                                        <label></label>
+                                    </div>
+                                </section>
+                                <span>加入正式发送</span>
+                            </li>
+                            <li>
+                                <span class="category_name"></span>
+                                <div class="operate_btn msgBtns">
+                                    <div class="btnCon">
+                                        <a class="mm_btn  screening screen_btn" id="sendMsgBtn" data-toggle="modal" data-target="#sendConfirm">发送</a>
+                                        <a href="javascript:void(0);" class="mm_btn clear_btn" id="pre_btn">上一步</a>
+                                    </div>
+                                    <!-- dialog -->
+                                    <div class="modal fade" id="sendConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel">发送确认</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <p class="confirmInfo">
+                                                            本次发送短信字数约
+                                                            <span class="screenNum">73</span> 字，扣费
+                                                            <span class="screenNum">1</span> 条，其中含变量
+                                                            <span class="screenNum">“连锁名称、门店名称、店员姓名、会员名称”</span> 以实际收到字数为准。
+                                                        </p>
+                                                        <br/>
+                                                        <p class="promptInfo">提示：为避免打扰会员休息，营销短信发送时间是早上8点至晚上10点，超出时间会自动顺延发送。</p>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn taskConfirm" id="taskConfirm">确认</button>
+                                                    <button type="button" class="btn btn-secondary taskCancel" data-dismiss="modal">取消</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="messageImitator ">
+                            <textarea class="messageEdit" id="getInput"></textarea>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/common/authority.js"></script>
+    <script type="text/javascript" src="common-tools/jquery-loading-overlay-1.4.1/src/loadingoverlay.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="js/jquery-md5.js"></script>
+    <script type="text/javascript" src="common-tools/Bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <script type="text/javascript" src="js/ajaxCommon.js"></script>
+    <script type="text/javascript" src="js/common/leftBar.js"></script>
+    <script type="text/javascript" src="js/sms-marketing/msgEdit.js "></script>
+    <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
+</body>
+
+</html>

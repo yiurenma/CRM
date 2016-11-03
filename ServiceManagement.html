@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>服务管理</title>
+    <link rel="stylesheet" type="text/css" href="common-tools/Bootstrap-3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/DataTables-1.10.12/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="common-tools/Select-1.2.0/css/select.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="css/daterangepicker.css" />
+    <link rel="stylesheet" type="text/css" href="css/common/leftBar.css">
+    <link rel="stylesheet" type="text/css" href="css/service-management/SevericeManagement.css">
+</head>
+
+<body>
+    <div id="container">
+        <aside id="left-aside">
+            <div class="back-drugstore">
+                <div class="back-drugstore-btn">
+                    <span></span>
+                    <p class="back-text">返回药店管理</p>
+                </div>
+            </div>
+            <nav class="nav-bar">
+                <ul class="nav-ul">
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="view"></i> 总览
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);"> <i class="left_icon" id="analyse"></i> 药品分析
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="management"></i> 会员管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="message"></i> 短信营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="phone"></i> 电话营销
+                        </a>
+                    </li>
+                    <li class="left_bar_li show_blue_line">
+                        <a href="javascript:void(0);" class="leftTextBlue ">
+                            <i class="left_icon lb_click_5" id="serve"></i> 服务管理
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="review"></i> 回访记录
+                        </a>
+                    </li>
+                    <li class="left_bar_li">
+                        <a href="javascript:void(0);">
+                            <i class="left_icon" id="bill"></i> 账单中心
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="shadowBar"></div>
+        <div class="content">
+            <article id="article-content">
+                <header class="header">
+                    <div class="crmDescription">
+                        <p>
+                            <span class="bgBack" onclick="window.location.href=window.history.back()">
+                                <i class="back_btn"></i>
+                                返回
+                            </span>
+                            <span class="split_line"></span>
+                            <span class="title"></span>
+                        </p>
+                        <span></span>
+                        <p class="admin_text">系统管理员</p>
+                    </div>
+                </header>
+                <!--切换标签页开始-->
+                <ul id="myTab" class="nav nav-tabs">
+                    <li class="active messageTabs">
+                        <a href="#smsMarketing" data-toggle="tab" class="tabsChange">
+                            <i class="mm_nav_icon click_0" id="active_icon"></i> 基本设置
+                            <span class="m_slide_block blue_block"></span>
+                        </a>
+                        <span class="split_line"></span>
+                    </li>
+                    <li class="messageTabs">
+                        <a href="#phoneMarketing" data-toggle="tab" class="tabsChange">
+                            <i class="mm_nav_icon" id="summary_icon"></i> 效果汇总
+                            <span class="m_slide_block slide-two blue_block hideBox"></span>
+                        </a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="smsMarketing">
+                        <div class="message_tab message_first">
+                            <p class="list_title ct_listTitle">服务设置</p>
+                        </div>
+                        <article id="9" class="activeSetCon birthService hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">会员生日时自动发送生日关怀短信，提升客户体验及忠诚度</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">发送日期</li>
+                                        <li class="activity_time">
+                                            会员生日&nbsp;
+                                            <div class="navbar" role="navigation">
+                                                <div class="timeList">
+                                                    <a href="javascript:void(0);" id="birth" class="timeDrop" data-toggle="dropdown" aria-expanded="false" data-id="0">
+                                                        当天
+                                                        <i class="arrow_down"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropDownList">
+                                                        <div class="btn-group span3 birthList" data-toggle="buttons-radio">
+                                                            <button type="button" class="btn btn-default" data-id="0">当天</button>
+                                                            <button type="button" class="btn btn-default" aria-pressed="false" data-id="-1">前1天</button>
+                                                            <button type="button" class="btn btn-default" data-id="-2">前2天</button>
+                                                            <button type="button" class="btn btn-default" data-id="-3">前3天</button>
+                                                            <button type="button" class="btn btn-default" data-id="-4">前4天</button>
+                                                            <button type="button" class="btn btn-default" data-id="-5">前5天</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">执行时间</li>
+                                        <li class="activity_status">
+                                            <div class="navbar" role="navigation">
+                                                <div class="timeList">
+                                                    <a href="javascript:void(0);" id="birthServiceActionTime" class="timeDrop" data-toggle="dropdown" aria-expanded="false" data-id="100000">
+                                                        10:00
+                                                        <i class="arrow_down"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropDownList">
+                                                        <div class="btn-group span3 birthServiceActionTimeList" data-toggle="buttons-radio">
+                                                            <button type="button" class="btn btn-default" aria-pressed="false" data-id="080000">8:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="090000">9:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="100000">10:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="110000">11:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="120000">12:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="130000">13:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="140000">14:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="150000">15:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="160000">16:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="170000">17:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="180000">18:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="190000">19:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="200000">20:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="210000">21:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="220000">22:00</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span>进行生日关怀</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_content smsCon">
+                                            <p style="display:inline">
+                                                亲爱的
+                                                <span class="greenWords">&nbsp;会员姓名&nbsp;</span> ，生日快乐！感谢您一直的陪伴与支持，生日当天来本店消费可获得额外惊喜哦！
+                                                <span class="greenWords">&nbsp;连锁名称&nbsp;门店名称&nbsp;店员姓名</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="1" class="activeSetCon bpResultFirst hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">当会员首次使用蓝牙血压计测量血压后，立刻发送血压测量结果及营养建议短信至会员手机上。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_time smsCon">
+                                            亲爱的会员，欢迎您到
+                                            <span class="greenWords">&nbsp;连锁名称 &nbsp;</span>-蓝信康慢病关爱中心进行血压测量！您最新的血压数据：（收缩压<span class="greenWords">&nbsp;收缩压数值&nbsp;</span>，舒张压<span class="greenWords">&nbsp;舒张压数值&nbsp;</span>）提示您属于<span class="greenWords">&nbsp;血压等级&nbsp;</span>血压。高血压的主要危险因素包括：高盐饮食、肥胖和过量饮酒等，蓝信康营养专家系统为您推荐每日食谱，平衡总热量、三大营养素、纤维素和盐分等指标。详情点击：
+                                            <span class="greenWords">&nbsp;营养方案短连接&nbsp;</span>。
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="3" class="activeSetCon bsResultFirst hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">当会员首次使用蓝牙血糖仪测量血糖后，立刻发送血糖测量结果短信至会员手机上。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_time smsCon">
+                                            亲爱的会员，欢迎您到
+                                            <span class="greenWords">&nbsp;连锁名称&nbsp;</span> -蓝信康慢病关爱中心进行血糖测量！您最新的<span class="greenWords">&nbsp;测量时段&nbsp;</span>血糖数值：
+                                            <span class="greenWords">&nbsp;血糖值mmol/L&nbsp;</span> ，结果提示：血糖<span class="greenWords">&nbsp;血糖等级&nbsp;</span>。请定期来店测量血糖并咨询店内药师。请关注微信服务号“蓝信康”获取更为详尽的健康管理信息。我们的客服专家，也会主动联系您提供健康咨询服务。
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="6" class="activeSetCon bfResultFirst hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">当会员首次使用蓝牙血脂计测量血脂后，立刻发送血脂测量结果及健康建议短信至会员手机上。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_time smsCon">
+                                            亲爱的会员，欢迎您到
+                                            <span class="greenWords">&nbsp;连锁名称&nbsp;</span> -蓝信康慢病关爱中心进行血脂测量！您的测量数值：总胆固醇
+                                            <span class="greenWords">&nbsp;总胆固醇数值&nbsp;</span> ，甘油三酯
+                                            <span class="greenWords">&nbsp;甘油三酯数值&nbsp;</span> ，高密度脂蛋白
+                                            <span class="greenWords">&nbsp;高密度脂蛋白数值&nbsp;</span> ，低密度脂蛋白
+                                            <span class="greenWords">&nbsp;低密度脂蛋白数值&nbsp;</span>，结果提示：<span class="greenWords">&nbsp;血脂测量结果及健康建议&nbsp;</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="7" class="activeSetCon HbAResultFirst hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">当会员首次进行糖化血红蛋白测量时，立刻发送测量结果及健康建议短信至会员手机上。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_time smsCon">
+                                              亲爱的会员，欢迎您到
+                                            <span class="greenWords">&nbsp;连锁名称&nbsp;</span> -蓝信康慢病关爱中心进行糖化血红蛋白测量！您的糖化血红蛋白数值：
+                                            <span class="greenWords">&nbsp;糖化血红蛋白数值%&nbsp;</span>，结果提示： <span class="greenWords">&nbsp;糖化血红蛋白测量结果及健康建议&nbsp;</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="2" class="activeSetCon bpResultMore hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">当会员再次使用蓝牙血压计测量血压后，如果血压等级是三级及三级以上时，立刻发送血压测量结果短信至会员手机上。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_time smsCon">
+                                            亲爱的会员，欢迎您到
+                                            <span class="greenWords">&nbsp;连锁名称 &nbsp;</span>-蓝信康慢病关爱中心进行血压测量！您最新的血压数据：（收缩压<span class="greenWords">&nbsp;收缩压数值&nbsp;</span>，舒张压<span class="greenWords">&nbsp;舒张压数值&nbsp;</span>）提示您属于<span class="greenWords">&nbsp;血压等级&nbsp;</span>血压。请关注微信服务号“蓝信康”获取更为详尽的健康管理信息。我们的客服专家，也会主动联系您提供健康咨询服务。
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="4" class="activeSetCon bsResultMore hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">当会员再次使用蓝牙血糖计测量血糖后，如果血糖数值很高（空腹、餐前、睡前大于13.9mmol/L，餐后大于16.7mmol/L）时，立刻发送血糖测量结果短信至会员手机上。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_time smsCon">
+                                             亲爱的会员，欢迎您到
+                                            <span class="greenWords">&nbsp;连锁名称&nbsp;</span> -蓝信康慢病关爱中心进行血糖测量！您最新的<span class="greenWords">&nbsp;测量时段&nbsp;</span>血糖数值：
+                                            <span class="greenWords">&nbsp;血糖值mmol/L&nbsp;</span> ，结果提示：<span class="greenWords">&nbsp;血糖血糖等级&nbsp;</span>。请定期来店测量血糖并咨询店内药师。请关注微信服务号“蓝信康”获取更为详尽的健康管理信息。我们的客服专家，也会主动联系您提供健康咨询服务。
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="5" class="activeSetCon bfResultMore hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">当会员再次使用蓝牙血脂计测量血脂后，立刻发送血脂测量结果及健康建议短信至会员手机上。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_time smsCon">
+                                           亲爱的会员，欢迎您到
+                                            <span class="greenWords">&nbsp;连锁名称&nbsp;</span> -蓝信康慢病关爱中心进行血脂测量！您的测量数值：总胆固醇
+                                            <span class="greenWords">&nbsp;总胆固醇数值&nbsp;</span> ，甘油三酯
+                                            <span class="greenWords">&nbsp;甘油三酯数值&nbsp;</span> ，高密度脂蛋白
+                                            <span class="greenWords">&nbsp;高密度脂蛋白数值&nbsp;</span> ，低密度脂蛋白
+                                            <span class="greenWords">&nbsp;低密度脂蛋白数值&nbsp;</span>，结果提示：<span class="greenWords">&nbsp;血脂测量结果及健康建议&nbsp;</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="8" class="activeSetCon HbAResultMore hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">当会员再次进行糖化血红蛋白测量时，立刻发送测量结果及健康建议短信至会员手机上。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_time smsCon">
+                                           亲爱的会员，欢迎您到
+                                            <span class="greenWords">&nbsp;连锁名称&nbsp;</span> -蓝信康慢病关爱中心进行糖化血红蛋白测量！您的糖化血红蛋白数值：
+                                            <span class="greenWords">&nbsp;糖化血红蛋白数值%&nbsp;</span>，结果提示： <span class="greenWords">&nbsp;糖化血红蛋白测量结果及健康建议&nbsp;</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="10" class="activeSetCon drugIllustrate hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">可针对所选择的药品，在会员购买药品后，选择时间将药品的用法用量及用药禁忌发送至会员手机。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">触发类型</li>
+                                        <li class="activity_time">定时发送</li>
+                                    </ul>
+                                </li>
+                                <li id="actionTime">
+                                    <ul class="team_list" id="action">
+                                        <li class="category_name">执行时间</li>
+                                        <li class="activity_status">
+                                            <div class="navbar" role="navigation">
+                                                <div class="timeList">
+                                                    <a href="javascript:void(0);" id="birth" class="timeDrop" data-toggle="dropdown" aria-expanded="false" data-id="1">
+                                                        第二天
+                                                        <i class="arrow_down"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropDownList">
+                                                        <div class="btn-group span3 birthList" data-toggle="buttons-radio">
+                                                            <button type="button" class="btn btn-default" data-id="1">第二天</button>
+                                                            <button type="button" class="btn btn-default" aria-pressed="false" data-id="2">第三天</button>
+                                                            <button type="button" class="btn btn-default" data-id="3">第四天</button>
+                                                            <button type="button" class="btn btn-default" data-id="4">第五天</button>
+                                                            <button type="button" class="btn btn-default" data-id="5">第六天</button>
+                                                            <button type="button" class="btn btn-default" data-id="6">第七天</button>
+                                                            <button type="button" class="btn btn-default" data-id="7">第八天</button>
+                                                            <button type="button" class="btn btn-default" data-id="8">第九天</button>
+                                                            <button type="button" class="btn btn-default" data-id="9">第十天</button>
+                                                            <button type="button" class="btn btn-default" data-id="14">第十五天</button>
+                                                            <button type="button" class="btn btn-default" data-id="29">第三十天</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            &nbsp; 的 &nbsp;
+                                            <div class="navbar" role="navigation">
+                                                <div class="timeList">
+                                                    <a href="javascript:void(0);" id="birthServiceActionTime" class="timeDrop" data-toggle="dropdown" aria-expanded="false" data-id="100000">
+                                                        10:00
+                                                        <i class="arrow_down"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropDownList">
+                                                        <div class="btn-group span3 birthServiceActionTimeList" data-toggle="buttons-radio">
+                                                            <button type="button" class="btn btn-default" aria-pressed="false" data-id="080000">8:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="090000">9:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="100000">10:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="110000">11:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="120000">12:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="130000">13:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="140000">14:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="150000">15:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="160000">16:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="170000">17:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="180000">18:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="190000">19:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="200000">20:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="210000">21:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="220000">22:00</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span id="add" class="addTime">添加</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="andActionTime" class="hideBox">
+                                    <ul class="team_list" id="andAction">
+                                        <li class="category_name moreTime">并且</li>
+                                        <li class="activity_status">
+                                            <div class="navbar" role="navigation">
+                                                <div class="timeList">
+                                                    <a href="javascript:void(0);" id="birth" class="timeDrop" data-toggle="dropdown" aria-expanded="false" data-id="1">
+                                                        第二天
+                                                        <i class="arrow_down"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropDownList">
+                                                        <div class="btn-group span3 birthList" data-toggle="buttons-radio">
+                                                            <button type="button" class="btn btn-default" data-id="1">第二天</button>
+                                                            <button type="button" class="btn btn-default" aria-pressed="false" data-id="2">第三天</button>
+                                                            <button type="button" class="btn btn-default" data-id="3">第四天</button>
+                                                            <button type="button" class="btn btn-default" data-id="4">第五天</button>
+                                                            <button type="button" class="btn btn-default" data-id="5">第六天</button>
+                                                            <button type="button" class="btn btn-default" data-id="6">第七天</button>
+                                                            <button type="button" class="btn btn-default" data-id="7">第八天</button>
+                                                            <button type="button" class="btn btn-default" data-id="8">第九天</button>
+                                                            <button type="button" class="btn btn-default" data-id="9">第十天</button>
+                                                            <button type="button" class="btn btn-default" data-id="14">第十五天</button>
+                                                            <button type="button" class="btn btn-default" data-id="30">第三十天</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            &nbsp; 的 &nbsp;
+                                            <div class="navbar" role="navigation">
+                                                <div class="timeList">
+                                                    <a href="javascript:void(0);" id="birthServiceActionTime" class="timeDrop" data-toggle="dropdown" aria-expanded="false" data-id="100000">
+                                                        10:00
+                                                        <i class="arrow_down"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropDownList">
+                                                        <div class="btn-group span3 birthServiceActionTimeList" data-toggle="buttons-radio">
+                                                            <button type="button" class="btn btn-default" aria-pressed="false" data-id="080000">8:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="090000">9:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="100000">10:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="110000">11:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="120000">12:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="130000">13:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="140000">14:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="150000">15:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="160000">16:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="170000">17:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="180000">18:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="190000">19:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="200000">20:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="210000">21:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="220000">22:00</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span id="delete" class="addTime">删除</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list chooseList" id="goodsList">
+                                        <li class="category_name">指定商品</li>
+                                        <li class="activity_status">
+                                            <!-- Modal -->
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-primary chooseBtn" data-toggle="modal" data-target="#chooseGoods">
+                                                    <input id="choose" type="checkbox" autocomplete="off" checked>选择</label>
+                                                <div class="modal fade" id="chooseGoods" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myModalLabel">选择药品</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="row">
+                                                                    <div class="left_table">
+                                                                        <p>药品库</p>
+                                                                        <table id="importantGoodsTable" class="table"></table>
+                                                                    </div>
+                                                                    <div class="right_list">
+                                                                        <p>已选择菜单选项</p>
+                                                                        <div class="selectedItem"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn taskConfirm" onclick="chosenGoods()">确认</button>
+                                                                <button type="button" class="btn btn-secondary taskCancel" data-dismiss="modal">取消</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent noMarginTop">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_content smsCon">
+                                            <p>
+                                                亲爱的
+                                                <span class="greenWords">&nbsp;会员姓名&nbsp;</span> ，感谢您到
+                                                <span class="greenWords">&nbsp;连锁名称&nbsp;门店名称&nbsp;</span> 购买了
+                                                <span class="greenWords">&nbsp;药品名称&nbsp;</span> ，请遵医嘱服药，有关用法用量及用药禁忌等相关信息请点击链接：
+                                                <span class="greenWords">&nbsp;用药提醒链接&nbsp;</span> 。有任何方面的问题，欢迎致电
+                                                <span class="greenWords">&nbsp;连锁电话&nbsp;</span> 。
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <article id="11" class="activeSetCon drugPurchase hideBox">
+                            <ul class="quickSelect">
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">功能介绍</li>
+                                        <li class="activity_name">可针对所选择的药品，系统会在药品服用接近完毕的时间，自动发送短信提醒会员进行复购，帮助连锁增加复购率。</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">发送日期</li>
+                                        <li class="activity_time">
+                                            药品用完&nbsp;
+                                            <div class="navbar" role="navigation">
+                                                <div class="timeList">
+                                                    <a href="javascript:void(0);" id="birth" class="timeDrop" data-toggle="dropdown" aria-expanded="false" data-id="0">
+                                                        当天
+                                                        <i class="arrow_down"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropDownList">
+                                                        <div class="btn-group span3 birthList" data-toggle="buttons-radio">
+                                                            <button type="button" class="btn btn-default" data-id="0">当天</button>
+                                                            <button type="button" class="btn btn-default" aria-pressed="false" data-id="-1">前1天</button>
+                                                            <button type="button" class="btn btn-default" data-id="-2">前2天</button>
+                                                            <button type="button" class="btn btn-default" data-id="-3">前3天</button>
+                                                            <button type="button" class="btn btn-default" data-id="-4">前4天</button>
+                                                            <button type="button" class="btn btn-default" data-id="-5">前5天</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">执行时间</li>
+                                        <li class="activity_time">
+                                            <div class="navbar" role="navigation">
+                                                <div class="timeList">
+                                                    <a href="javascript:void(0);" id="birthServiceActionTime" class="timeDrop" data-toggle="dropdown" aria-expanded="false" data-id="100000">
+                                                        10:00
+                                                        <i class="arrow_down"></i>
+                                                    </a>
+                                                    <div class="dropdown-menu dropDownList">
+                                                        <div class="btn-group span3 birthServiceActionTimeList" data-toggle="buttons-radio">
+                                                            <button type="button" class="btn btn-default" aria-pressed="false" data-id="080000">8:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="090000">9:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="100000">10:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="110000">11:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="120000">12:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="130000">13:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="140000">14:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="150000">15:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="160000">16:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="170000">17:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="180000">18:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="190000">19:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="200000">20:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="210000">21:00</button>
+                                                            <button type="button" class="btn btn-default" data-id="220000">22:00</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <span>进行复购提醒。</span>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list chooseList" id="goodsList1">
+                                        <li class="category_name">指定商品</li>
+                                        <li class="activity_status">
+                                            <!-- Modal -->
+                                            <div class="btn-group" data-toggle="buttons">
+                                                <label class="btn btn-primary chooseBtn" data-toggle="modal" data-target="#chooseGoods1">
+                                                    <input id="choose" type="checkbox" autocomplete="off" checked>选择</label>
+                                                <div class="modal fade" id="chooseGoods1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h4 class="modal-title" id="myModalLabel">选择药品</h4>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="row">
+                                                                    <div class="left_table">
+                                                                        <p>药品库</p>
+                                                                        <table id="importantGoodsTable1" class="table"></table>
+                                                                    </div>
+                                                                    <div class="right_list">
+                                                                        <p>已选择菜单选项</p>
+                                                                        <div class="selectedItem1"></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn taskConfirm" onclick="chosenGoods1()">确认</button>
+                                                                <button type="button" class="btn btn-secondary taskCancel" data-dismiss="modal">取消</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list smsContent noMarginTop">
+                                        <li class="category_name smsSetting">短信设置</li>
+                                        <li class="activity_content smsCon">
+                                            <p>
+                                                亲爱的
+                                                <span class="greenWords">&nbsp;会员姓名&nbsp;</span> ，感谢您选择了
+                                                <span class="greenWords">&nbsp;连锁名称&nbsp;门店名称&nbsp;</span> 购买了
+                                                <span class="greenWords">&nbsp;药品名称&nbsp;</span> ，您的药品已接近服完，欢迎再次光临本店进行复购。
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <ul class="team_list">
+                                        <li class="category_name">服务开启</li>
+                                        <li class="activity_content">
+                                            关闭
+                                            <section class="model-2 chooseTime">
+                                                <div class="checkbox">
+                                                    <input id="addTimer" type="checkbox">
+                                                    <label></label>
+                                                </div>
+                                            </section>
+                                            开启
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </article>
+                        <div class="operate_btn">
+                            <a href="javascript:void(0);" class="mm_btn">确定</a>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="phoneMarketing">
+                        <div class="message_tab message_first">
+                            <p class="list_title ct_listTitle">数据表</p>
+                            <div class="dateCon">
+                                <div class="btn-group" id="serviceMergeTime" data-toggle="buttons">
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked value="week">周</label>
+                                    <label class="btn btn-primary active">
+                                        <input type="radio" autocomplete="off" checked value="month">月</label>
+                                    <label class="btn btn-primary">
+                                        <input type="radio" autocomplete="off" checked value="year">年</label>
+                                </div>
+                                <div class="date span2">
+                                    <input id="serviceDateRange" type="text" name="serviceDateRange" class="serviceDateRange" value="" /> <b class="caret_icon"></b>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table_content">
+                            <table id="serviceManagement" class="table"></table>
+                        </div>
+                        <div class="message_tab">
+                            <p class="list_title ct_listTitle">趋势图</p>
+                        </div>
+                        <div style="height:500px" class="histogram">
+                            <div id="serviceChart" style="height:500px;width:1000px"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--切换标签页结束-->
+            </article>
+        </div>
+    </div>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="common-tools/jQuery-2.2.3/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="js/common/authority.js"></script>
+    <script type="text/javascript" src="common-tools/Bootstrap-3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/DataTables-1.10.12/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="common-tools/DataTables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.colVis.min.js"></script>
+    <script type="text/javascript" src="common-tools/Buttons-1.2.2/js/buttons.bootstrap.min.js"></script>
+    <script type="text/javascript" src="common-tools/Select-1.2.0/js/dataTables.select.min.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment.js"></script>
+    <script type="text/javascript" src="common-tools/Moment-2.15.1/moment-with-locales.min.js"></script>
+    <script type="text/javascript" src="common-tools/Echarts-3.2.3/echarts.min.js"></script>
+    <script type="text/javascript" src="common-tools/jquery-loading-overlay-1.4.1/src/loadingoverlay.js"></script>
+    <script type="text/javascript" src="js/jquery-md5.js"></script>
+    <script type="text/javascript" src="js/ajaxCommon.js"></script>
+    <script type="text/javascript" src="js/daterangepicker.js"></script>
+    <script type="text/javascript" src="js/common/leftBar.js"></script>
+    <script type="text/javascript" src="js/service-management/ServiceManagement.js"></script>
+</body>
+
+</html>

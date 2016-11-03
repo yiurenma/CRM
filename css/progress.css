@@ -1,0 +1,70 @@
+.progress-bar-yinfo {
+    background: #6cb6f5;
+}
+
+.progress_wran {
+    background-color: red;
+}
+
+.progress-bar-success {
+    background-color: #39579a;
+    box-shadow: none
+}
+
+.progress {
+    width: 40%;
+    margin: 0 auto;
+}
+
+.glyphicon_per {
+    background: #d7ddeb;
+}
+
+.Better_check {
+    background: #6cb6f5;
+}
+
+.aria-valuemin {
+    background: #e2f0fd;
+}
+
+.form-group {
+    background: #dff4e6;
+}
+
+.dropdown-toggle {
+    background: #5fc782;
+}
+
+.menuitem {
+    background: #9e8adb;
+}
+
+.primary {
+    background: #ece8f8;
+}
+
+.contact {
+    background: #ff8cc9;
+}
+
+.default_navbar {
+    background: #ffe8f4;
+}
+
+.navigation {
+    background: #fddedb;
+}
+
+.aria-valuen {
+    background: #f55949;
+}
+
+.progress {
+    position: relative;
+    display: inline-block;
+    text-align: left;
+    height: 20px;
+    border-radius: 2px;
+    box-shadow: none;
+}
