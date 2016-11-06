@@ -1101,7 +1101,7 @@ $(function() {
         $(".btn-primary").eq(4).remove();
         $("#goodsList").remove();
         $("#grade").html("该药品" + "<br>" + "会员等级");
-        $(".btn-primary").eq(16).html('<input type="checkbox" autocomplete="off" data-name="cLastTime">' + '该药品会员等级');
+        $(".btn-primary").eq(16).html('<input type="checkbox" autocomplete="off" data-name="rfmLevel">' + '该药品会员等级');
 
         messageMarketingItem.goodsName = getUrlParam("goodsName");
         messageMarketingItem.goodsId = getUrlParam("goodsId");

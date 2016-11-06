@@ -57,7 +57,7 @@ var smsEditItem = {
 
         $("#inputWords").on("input", function() {
             //计算输入的文本数量和短信数量
-            var words_num = $("#inputWords").text().length + 5;
+            var words_num = $("#inputWords").text().length + 10;
             $("#wordCounter").text(words_num);
             $("#msgCounter").text(Math.ceil(words_num / 70));
             //给手机屏幕文本框赋值
@@ -72,7 +72,7 @@ var smsEditItem = {
             $(this).children(".variable").each(function(index) {
                 sendTextNode.children(".variable").eq(index).html(sendTextNode.children(".variable").eq(index).attr("data-variable"));
             });
-            smsEditItem.sendText = sendTextNode.text();
+            smsEditItem.sendText = sendTextNode.text() + " 退订回N";
             console.log(smsEditItem.sendText);
         });
 
