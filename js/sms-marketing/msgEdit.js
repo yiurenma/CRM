@@ -9,6 +9,7 @@ var smsEditItem = {
     smsTimer: "", //定时发送短信的时间
     addTestNum: false, //将测试手机号码加入发送的列表内，默认是不加入
     lxkSymbol: "【蓝信康】",
+    quitMessText: " 退订回N",
     writingText: "", //编辑框中的内容
     phoneText: "", //手机显示框中的内容
     sendText: "", //发送的内容
@@ -65,14 +66,14 @@ var smsEditItem = {
             $(this).children(".variable").each(function(index) {
                 phoneTextNode.children(".variable").eq(index).html(phoneTextNode.children(".variable").eq(index).attr("data-variable-text"));
             });
-            smsEditItem.phoneText = smsEditItem.lxkSymbol + phoneTextNode.text();
+            smsEditItem.phoneText = smsEditItem.lxkSymbol + phoneTextNode.text() + smsEditItem.quitMessText;
             $("#getInput").val(smsEditItem.phoneText);
             //发送给接口的短信内容模板
             var sendTextNode = $(this).clone();
             $(this).children(".variable").each(function(index) {
                 sendTextNode.children(".variable").eq(index).html(sendTextNode.children(".variable").eq(index).attr("data-variable"));
             });
-            smsEditItem.sendText = sendTextNode.text() + " 退订回N";
+            smsEditItem.sendText = sendTextNode.text() + smsEditItem.quitMessText;
             console.log(smsEditItem.sendText);
         });
 
@@ -255,14 +256,14 @@ function showBtn(btnVal) {
     $("#inputWords").children(".variable").each(function(index) {
         phoneTextNode.children(".variable").eq(index).html(phoneTextNode.children(".variable").eq(index).attr("data-variable-text"));
     });
-    smsEditItem.phoneText = smsEditItem.lxkSymbol + phoneTextNode.text();
+    smsEditItem.phoneText = smsEditItem.lxkSymbol + phoneTextNode.text() + smsEditItem.quitMessText;
     $("#getInput").val(smsEditItem.phoneText);
     //发送给接口的短信内容模板
     var sendTextNode = $("#inputWords").clone();
     $("#inputWords").children(".variable").each(function(index) {
         sendTextNode.children(".variable").eq(index).html(sendTextNode.children(".variable").eq(index).attr("data-variable"));
     });
-    smsEditItem.sendText = sendTextNode.text();
+    smsEditItem.sendText = sendTextNode.text() + smsEditItem.quitMessText;
 }
 
 
