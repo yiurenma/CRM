@@ -456,10 +456,6 @@ var gerneralViewItem = {
 };
 
 $(function() {
-        //暂时让cookie一直存在，在总览页面的js中存入mainStoreId的值并且如果链接中如果存在mainStoreId的值优先取这个值并保存在cookie中
-    $.cookie("mainStoreId", "1100000");  
-    $.cookie("employeeId","3bc5e3b0f5704c50a3f749ab8920fcb4");
-
     //从旧系统中得到员工号和总店ID做权限控制,cookie失效时间为1天
     gerneralViewItem.mainStoreId = $.cookie("mainStoreId");
     //处理会员等级计算时间跨度

@@ -1,9 +1,13 @@
 var vType = "web";
 var vCode = 100;
 var platform = "web";
-var apiEntry = "https://platform.carelinker.com/clApi/entry";//生产环境api链接
-// var apiEntry = "http://api.carelinker.com/clApi/entry";//本地和测试环境api链接
 var token = 000;
+
+var apiEntry = "https://platform.carelinker.com/clApi/entry";//生产环境api链接
+// var apiEntry = "http://api.carelinker.com/clApi/entry"; //本地和测试环境api链接
+//暂时让cookie一直存在，在总览页面的js中存入mainStoreId的值并且如果链接中如果存在mainStoreId的值优先取这个值并保存在cookie中
+// $.cookie("mainStoreId", "1100000");
+// $.cookie("employeeId", "3bc5e3b0f5704c50a3f749ab8920fcb4");
 
 function post(method, path, data, success) {
     data.platform = platform;
@@ -92,39 +96,39 @@ function GetDateStr(times, AddDayCount) {
 
 function getTime(time) {
     var str = time.toString();
-    return str.replace(/[^0-9]/ig,"") + "000000";
+    return str.replace(/[^0-9]/ig, "") + "000000";
 }
 
 function getDateAndTime(time) {
     var str = time.toString();
-    return str.replace(/[^0-9]/ig,"");
+    return str.replace(/[^0-9]/ig, "");
 }
 
 function getDayLastTime(time) {
     var str = time.toString();
-    return str.replace(/[^0-9]/ig,"") + "235959";
+    return str.replace(/[^0-9]/ig, "") + "235959";
 }
 
 function getTimeByAddSeconds(time) {
     var str = time.toString();
-    return str.replace(/[^0-9]/ig,"") + "00";
+    return str.replace(/[^0-9]/ig, "") + "00";
 }
 
-function getDate(time){
-    var year = time.substring(0,4);
-    var month = time.substring(4,6);
-    var day = time.substring(6,8);
+function getDate(time) {
+    var year = time.substring(0, 4);
+    var month = time.substring(4, 6);
+    var day = time.substring(6, 8);
 
     return year + '年' + month + '月' + day + '日';
 }
 
-function getDateString(time,addDay){
-    var year = time.substring(0,4);
-    var month = time.substring(4,6);
-    var day = time.substring(6,8);
-    var hour = time.substring(8,10);
-    var mm = time.substring(10,12);
-    var ss = time.substring(12,14);
+function getDateString(time, addDay) {
+    var year = time.substring(0, 4);
+    var month = time.substring(4, 6);
+    var day = time.substring(6, 8);
+    var hour = time.substring(8, 10);
+    var mm = time.substring(10, 12);
+    var ss = time.substring(12, 14);
 
     var dd = new Date(year, month, day, hour, mm, ss);
     dd.setDate(dd.getDate() + addDay);
@@ -134,18 +138,18 @@ function getDateString(time,addDay){
     var d = dd.getDate();
     var h = dd.getHours();
     var mi = dd.getMinutes();
-    return y.toString() + (m < 10 ? "0" + m : m).toString()  + (d < 10 ? "0" + d : d).toString() + (h < 10 ? "0" + h : h).toString() + (mi < 10 ? "0" + mi : mi).toString() + "00";
+    return y.toString() + (m < 10 ? "0" + m : m).toString() + (d < 10 ? "0" + d : d).toString() + (h < 10 ? "0" + h : h).toString() + (mi < 10 ? "0" + mi : mi).toString() + "00";
 }
 
-$(document).ajaxStart(function(){
-    $.LoadingOverlay("show",{
-         // image : "images/loading3.gif",
-         // maxSize : "1000px",
-         // minSize : "500px"
+$(document).ajaxStart(function() {
+    $.LoadingOverlay("show", {
+        // image : "images/loading3.gif",
+        // maxSize : "1000px",
+        // minSize : "500px"
     });
 });
 
-$(document).ajaxStop(function(){
+$(document).ajaxStop(function() {
     $.LoadingOverlay("hide");
 });
 
@@ -153,6 +157,5 @@ $(document).ajaxStop(function(){
 var commonError = " 请发送以下错误信息到邮箱customer@carelinker.com："
 var deleteError = "删除失败了!" + commonError;
 var updateError = "更新失败了!" + commonError;
-var addError    = "增加失败了!" + commonError;
+var addError = "增加失败了!" + commonError;
 var serverError = "服务器出问题啦！" + commonError;
-
