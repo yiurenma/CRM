@@ -1,8 +1,8 @@
 var vType = "web";
 var vCode = 100;
 var platform = "web";
-// var apiEntry = "https://platform.carelinker.com/clApi/entry";//生产环境api链接
-var apiEntry = "http://api.carelinker.com/clApi/entry";//本地和测试环境api链接
+var apiEntry = "https://platform.carelinker.com/clApi/entry";//生产环境api链接
+// var apiEntry = "http://api.carelinker.com/clApi/entry";//本地和测试环境api链接
 var token = 000;
 
 function post(method, path, data, success) {
