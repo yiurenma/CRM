@@ -483,7 +483,9 @@ b {
     border-bottom: 0 solid transparent;
     opacity: 1;
 }
-
+.inputTitle>.tooltip{
+    position:fixed;
+}
 .count_btn:active>i {
     opacity: 0.6;
 }
