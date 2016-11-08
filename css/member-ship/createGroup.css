@@ -717,7 +717,7 @@
        margin: 20px 10px 5px 5px;
    }
    
-   #goodsList>.btn-group>label {
+   .chooseTop>.btn-group>label {
        margin-top: 8px;
    }
    
@@ -867,7 +867,7 @@
    }
    /* 删除按钮 */
    
-   #goodsList>.btn-group>label {
+   .chooseTop>.btn-group>label {
        margin-top: 8px;
    }
    /* 左右分栏 */
