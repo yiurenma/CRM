@@ -9,7 +9,7 @@ var smsEditItem = {
     smsTimer: "", //定时发送短信的时间
     addTestNum: false, //将测试手机号码加入发送的列表内，默认是不加入
     lxkSymbol: "【蓝信康】",
-    quitMessText: " 退订回N",
+    quitMessText: "退订回N",
     writingText: "", //编辑框中的内容
     phoneText: "", //手机显示框中的内容
     sendText: "", //发送的内容
