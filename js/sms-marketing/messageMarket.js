@@ -655,8 +655,8 @@ var messageMarketingItem = {
                         var curTips = $(".termsList>li").not(".hideBox").eq(i).find("label").eq(j).children().attr("data-name");
                         // var curSickness =  $(".termsList li").not(".hideBox").eq(i).find("label").eq(j).children().val();
                         // 获取自定义范围
-                        var curStart = $(".termsList li").not(".hideBox").eq(i).find(".startNum").val();
-                        var curEnd = $(".termsList li").not(".hideBox").eq(i).find(".endNum").val();
+                        var curStart = $(".termsList li").not(".hideBox").not(".paginate_button").eq(i).find(".startNum").val();
+                        var curEnd = $(".termsList li").not(".hideBox").not(".paginate_button").eq(i).find(".endNum").val();
                         // 多选条件(疾病类，个人设备)处理，选中则返回true
                         if ((curTips == "hasHtn") || (curTips == "hasHtnHigh") || (curTips == "hasHtnLevel1") ||
                             (curTips == "hasHtnLevel2") || (curTips == "hasHtnLevel3") || (curTips == "hasDm") ||
