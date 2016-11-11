@@ -22,7 +22,7 @@ var drugAnalysisItem = {
                         //获得所有药品数据
                         var list = crmGroupFirstClassList[i].name;
                         //对各个药品进行拼音分类处理
-                        var letter = pinyin.getCamelChars(list).substring(0, 1);
+                        var letter = crmGroupFirstClassList[i].initial;
                         //将药品动态添加到div中
                         $("#" + letter).find("div[class$='myGroup']").append(
                             '<label class="btn btn-primary">' +
