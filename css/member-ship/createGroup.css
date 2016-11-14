@@ -713,12 +713,30 @@
        margin: 0;
    }
    
+   #chooseGoods .selectedItem {
+       max-height: 200px;
+       overflow: auto;
+   }
+   
+   #chooseBranchStoreList .selectedItem,
+   #chooseMeasureBranchStoreList .selectedItem {
+       max-height: 670px;
+       overflow: auto;
+   }
+   
    .left_table {
        margin: 20px 10px 5px 5px;
    }
    
-   .chooseTop>.btn-group>label {
+   #goodsList>.btn-group>label,
+   #cBranchStoreList>.btn-group>label,
+   #hBranchStoreList>.btn-group>label {
        margin-top: 8px;
+   }
+   
+   .left_table .dataTables_scroll {
+       max-height: 670px;
+       overflow: auto;
    }
    
    .selectedItem>.chosenObject {
