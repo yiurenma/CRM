@@ -463,19 +463,22 @@ function effectAnalysis(bDateT, eDateT, marketingId, mStId) {
         var maxMoney = 0;
         var resData = result.dataList;
         for (var key in resData) {
-            mCount = parseFloat(resData[key].memberCount.split("人")[0]);
-            tMoney = resData[key].totalMoney.split("¥")[1];
+            if (key < resData.length - 2) {
+                mCount = parseFloat(resData[key].memberCount.split("人")[0]);
+                tMoney = parseFloat(resData[key].totalMoney.split("¥")[1]);
 
-            if (mCount >= maxMember) {
-                maxMember = mCount;
-            }
-            if (tMoney >= maxMoney) {
-                maxMoney = tMoney;
-            }
+                if (mCount >= maxMember) {
+                    maxMember = mCount;
+                }
+                if (tMoney >= maxMoney) {
+                    maxMoney = tMoney;
+                }
 
-            option['xAxis'][0].data.push(resData[key].createDate);
-            option['series'][0].data.push(mCount);
-            option['series'][1].data.push(parseFloat(tMoney));
+                option['xAxis'][0].data.push(resData[key].createDate);
+                option['series'][0].data.push(mCount);
+                option['series'][1].data.push(tMoney);
+
+            }
         }
 
         option["yAxis"][0].max = Math.ceil(maxMember / 10) * 10;
@@ -483,9 +486,9 @@ function effectAnalysis(bDateT, eDateT, marketingId, mStId) {
         option["yAxis"][1].max = Math.ceil(maxMoney / 500) * 500;
         option["yAxis"][1].interval = option["yAxis"][1].max / 5;
 
-        option['xAxis'][0].data.splice(-2, 2);
-        option['series'][0].data.splice(-2, 2);
-        option['series'][1].data.splice(-2, 2);
+        // option['xAxis'][0].data.splice(-2, 2);
+        // option['series'][0].data.splice(-2, 2);
+        // option['series'][1].data.splice(-2, 2);
 
         myChart.setOption(option);
         //效果分析趋势
