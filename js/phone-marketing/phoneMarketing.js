@@ -221,10 +221,16 @@ var phoneMarketing = {
     effectAnalysisDataTable: function() {
         $("#effectAnalysisTable").DataTable({
             //以下是对表格获得数据的设置
-            "dom": "t",
+            "dom": "Bt",
             "destroy":true,
             "ordering": false, //禁止排序
             "data":phoneMarketing.effectAnalysisData.length == 0 ? "" : phoneMarketing.effectAnalysisData,
+            "buttons": [{
+                "extend": "csvHtml5",
+                "text": "导出CSV",
+                "CharSet": "utf8", //解决用excel打开文件中文乱码问题
+                "bom": true //解决用excel打开文件中文乱码问题
+            }],
             "columns": phoneMarketing.effectAnalysisDataColumns,
             "oLanguage": { //国际语言转化
                 "sLengthMenu": "每页显示数量 _MENU_ ",
@@ -245,7 +251,7 @@ var phoneMarketing = {
         var operationPerformanceDraw; //datatables服务器分页必传参数
         $('#phoneMarketingOperationPerformance').DataTable({
             //以下是对表格获得数据的设置
-            "dom": "tlp",
+            "dom": "Btlp",
             "serverSide": true, //开启datatables的服务器模式
             "lengthMenu": [5, 10, 15],
             "ordering": false, //禁止排序
@@ -262,6 +268,12 @@ var phoneMarketing = {
                     return JSON.stringify(phoneMarketing.apiDataFromServer(data, operationPerformanceDraw));
                 }
             },
+            "buttons": [{
+                "extend": "csvHtml5",
+                "text": "导出CSV",
+                "CharSet": "utf8", //解决用excel打开文件中文乱码问题
+                "bom": true //解决用excel打开文件中文乱码问题
+            }],
             "columns": phoneMarketing.operationPerformanceColumns,
             "oLanguage": { //国际语言转化
                 "sLengthMenu": "每页显示数量 _MENU_ ",
@@ -282,7 +294,7 @@ var phoneMarketing = {
         var memberPerformanceDraw; //datatables服务器分页必传参数
         $('#phoneMarketingMemberPerformance').DataTable({
             //以下是对表格获得数据的设置
-            "dom": "tlp",
+            "dom": "Btlp",
             "serverSide": true, //开启datatables的服务器模式
             "lengthMenu": [5, 10, 15],
             "ordering": false, //禁止排序
@@ -299,6 +311,12 @@ var phoneMarketing = {
                     return JSON.stringify(phoneMarketing.apiDataFromServer(data, memberPerformanceDraw));
                 }
             },
+            "buttons": [{
+                "extend": "csvHtml5",
+                "text": "导出CSV",
+                "CharSet": "utf8", //解决用excel打开文件中文乱码问题
+                "bom": true //解决用excel打开文件中文乱码问题
+            }],
             "columns": phoneMarketing.memberPerformanceColumns,
             "oLanguage": { //国际语言转化
                 "sLengthMenu": "每页显示数量 _MENU_ ",
@@ -321,7 +339,7 @@ var phoneMarketing = {
             //以下是对表格获得数据的设置
             "dom": "Btlp",
             "serverSide": true, //开启datatables的服务器模式
-            "lengthMenu": [5, 10, 15],
+            "lengthMenu": [5, 10, 15, 'All'],
             "ordering": false, //禁止排序
             "destroy": true,
             "ajax": {

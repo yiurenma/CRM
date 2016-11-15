@@ -178,10 +178,16 @@ var smsMarketingEffect = {
     effectAnalysisDataTable: function() {
         $("#effectAnalysisTable").DataTable({
             //以下是对表格获得数据的设置
-            "dom": "t",
+            "dom": "Bt",
             "destroy":true,
             "ordering": false, //禁止排序
             "data":smsMarketingEffect.effectAnalysisData,
+            "buttons": [{
+                "extend": "csvHtml5",
+                "text": "导出CSV",
+                "CharSet": "utf8", //解决用excel打开文件中文乱码问题
+                "bom": true //解决用excel打开文件中文乱码问题
+            }],
             "columns": smsMarketingEffect.effectAnalysisDataColumns,
             "oLanguage": { //国际语言转化
                 "sLengthMenu": "每页显示数量 _MENU_ ",
@@ -477,7 +483,6 @@ function effectAnalysis(bDateT, eDateT, marketingId, mStId) {
                 option['xAxis'][0].data.push(resData[key].createDate);
                 option['series'][0].data.push(mCount);
                 option['series'][1].data.push(tMoney);
-
             }
         }
 
