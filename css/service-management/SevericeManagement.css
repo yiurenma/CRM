@@ -1285,12 +1285,12 @@ img {
 }
 
 
-/* div.dataTables_wrapper div.dataTables_length select {
-    width: 60px;
+div.dataTables_wrapper div.dataTables_length select {
+    width: 72px;
     height: 34px;
     display: inline-block;
     background: #edf3f9;
-} */
+}
 
 select.form-control {
     border: 1px solid #ccc;
