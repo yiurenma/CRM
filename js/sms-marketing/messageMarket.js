@@ -156,7 +156,7 @@ var messageMarketingItem = {
                 $("#allNum").text(prepare_list.totalCount);
                 $("#effectNum").text(prepare_list.effectCount);
                 // 筛选人数小于200时
-                if (prepare_list.effectCount <= 200) {
+                if (prepare_list.effectCount <= 1) {
                     $('.resultInfo .hideBox').removeClass("hideBox");
                     $('.storeManager').addClass("hideBox"); //把门店负责人数隐藏
                     $('.checkList').addClass("hideBox"); //隐藏查看
@@ -792,19 +792,22 @@ var messageMarketingItem = {
         messageMarketingItem.messageMarketingImportantGoodsTable = $('#importantGoodsTable').DataTable({
             //以下是对表格获得数据的设置
             "dom": "ftlp",
-            "scrollX": 480,
+            "scrollX": 200,
+            "scrollY": 670,
+            "scrollCollapse": true,
             //以下是表格内容多选属性
             "columnDefs": [{
                 "orderable": false,
                 "className": 'select-checkbox', //选择行
-                "targets": 0
+                "targets": 0,
+                "title": '<input type="checkbox" id="importantGoodsCurrentPage" class="select-current-page-checkbox"/>'
             }],
             "select": {
                 "style": 'multi', //多选
                 "selector": 'td:first-child'
             },
             //以上是表格内容多选属性
-            "lengthMenu": [5, 10, 15],
+            "lengthMenu": [[5, 10, 15, -1],[5, 10, 15, "全部"]],
             "ordering": false, //禁止排序
             "ajax": {
                 "url": apiEntry, //api访问链接    
@@ -837,17 +840,29 @@ var messageMarketingItem = {
 
         $('.input-sm').attr("placeholder", "请选择药品");
 
+        $('#importantGoodsCurrentPage').change(function(data) {
+            if (this.checked) {
+                messageMarketingItem.messageMarketingImportantGoodsTable.rows({ page: 'current' }).select();
+            } else {
+                messageMarketingItem.messageMarketingImportantGoodsTable.rows({ page: 'current' }).deselect();
+            }
+        });
+
         //选择商品：点击商品事件
         messageMarketingItem.messageMarketingImportantGoodsTable
             .on('select', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).data().toArray();
-                messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).nodes().to$().addClass(rowData[0].drugId);
-                $("#goodsList .selectedItem").append('<a class="chosenObject" goods-id="' + rowData[0].drugId + '">' + rowData[0].name + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
+                for (var key in rowData) {
+                    messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).nodes().to$().addClass(rowData[key].drugId);
+                    $("#goodsList .selectedItem").append('<a class="chosenObject" goods-id="' + rowData[key].drugId + '">' + rowData[key].name + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
+                }
             })
             .on('deselect', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).data().toArray();
-                messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).nodes().to$().removeClass(rowData[0].drugId);
-                $("#goodsList .selectedItem").children('[goods-id="' + rowData[0].drugId + '"]').remove();
+                for (var key in rowData) {
+                    messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).nodes().to$().removeClass(rowData[key].drugId);
+                    $("#goodsList .selectedItem").children('[goods-id="' + rowData[key].drugId + '"]').remove();
+                }
             });
     },
 
@@ -874,18 +889,21 @@ var messageMarketingItem = {
             //以下是对表格获得数据的设置
             "dom": "ftlp",
             "scrollX": 480,
+            "scrollY": 670,
+            "scrollCollapse": true,
             //以下是表格内容多选属性
             "columnDefs": [{
                 "orderable": false,
                 "className": 'select-checkbox', //选择行
-                "targets": 0
+                "targets": 0,
+                "title": '<input type="checkbox" id="branchStoreCurrentPage" class="select-current-page-checkbox"/>'
             }],
             "select": {
                 "style": 'multi', //多选
                 "selector": 'td:first-child'
             },
             //以上是表格内容多选属性
-            "lengthMenu": [5, 10, 15],
+            "lengthMenu": [[5, 10, 15, -1],[5, 10, 15, "全部"]],
             "ordering": false, //禁止排序
             "ajax": {
                 "url": apiEntry, //api访问链接    
@@ -918,17 +936,29 @@ var messageMarketingItem = {
 
         $('.input-sm').attr("placeholder", "请输入门店名称");
 
+        $('#branchStoreCurrentPage').change(function(data) {
+            if (this.checked) {
+                messageMarketingItem.messageMarketingBranchStoreTable.rows({ page: 'current' }).select();
+            } else {
+                messageMarketingItem.messageMarketingBranchStoreTable.rows({ page: 'current' }).deselect();
+            }
+        });
+
         //最近消费门店：点击门店事件
         messageMarketingItem.messageMarketingBranchStoreTable
             .on('select', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).data().toArray();
-                messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).nodes().to$().addClass(rowData[0].branchStoreId);
-                $("#cBranchStoreList .selectedItem").append('<a class="chosenObject" branchStoreId="' + rowData[0].branchStoreId + '">' + rowData[0].branchStoreName + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
+                for (var key in rowData) {
+                    messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).nodes().to$().addClass(rowData[key].branchStoreId);
+                    $("#cBranchStoreList .selectedItem").append('<a class="chosenObject" branchStoreId="' + rowData[key].branchStoreId + '">' + rowData[key].branchStoreName + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
+                }
             })
             .on('deselect', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).data().toArray();
-                messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).nodes().to$().removeClass(rowData[0].branchStoreId);
-                $("#cBranchStoreList .selectedItem").children('[branchStoreId="' + rowData[0].branchStoreId + '"]').remove();
+                for (var key in rowData) {
+                    messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).nodes().to$().removeClass(rowData[key].branchStoreId);
+                    $("#cBranchStoreList .selectedItem").children('[branchStoreId="' + rowData[key].branchStoreId + '"]').remove();
+                }
             });
     },
 
@@ -954,18 +984,21 @@ var messageMarketingItem = {
             //以下是对表格获得数据的设置
             "dom": "ftlp",
             "scrollX": 480,
+            "scrollY": 670,
+            "scrollCollapse": true,
             //以下是表格内容多选属性
             "columnDefs": [{
                 "orderable": false,
                 "className": 'select-checkbox', //选择行
-                "targets": 0
+                "targets": 0,
+                "title": '<input type="checkbox" id="measureBranchStoreCurrentPage" class="select-current-page-checkbox"/>'
             }],
             "select": {
                 "style": 'multi', //多选
                 "selector": 'td:first-child'
             },
             //以上是表格内容多选属性
-            "lengthMenu": [5, 10, 15],
+            "lengthMenu": [[5, 10, 15, -1],[5, 10, 15, "全部"]],
             "ordering": false, //禁止排序
             "ajax": {
                 "url": apiEntry, //api访问链接    
@@ -998,17 +1031,29 @@ var messageMarketingItem = {
 
         $('.input-sm').attr("placeholder", "请选择门店");
 
+        $('#measureBranchStoreCurrentPage').change(function(data) {
+            if (this.checked) {
+                messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows({ page: 'current' }).select();
+            } else {
+                messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows({ page: 'current' }).deselect();
+            }
+        });
+
         //最近测量门店：点击门店事件
         messageMarketingItem.messageMarketingMeasureBranchStoreTable
             .on('select', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows(indexes).data().toArray();
-                messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows(indexes).nodes().to$().addClass(rowData[0].branchStoreId);
-                $("#hBranchStoreList .selectedItem").append('<a class="chosenObject" branchStoreId="' + rowData[0].branchStoreId + '">' + rowData[0].branchStoreName + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
+                for (var key in rowData) {
+                    messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows(indexes).nodes().to$().addClass(rowData[key].branchStoreId);
+                    $("#hBranchStoreList .selectedItem").append('<a class="chosenObject" branchStoreId="' + rowData[key].branchStoreId + '">' + rowData[key].branchStoreName + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
+                }
             })
             .on('deselect', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows(indexes).data().toArray();
-                messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows(indexes).nodes().to$().removeClass(rowData[0].branchStoreId);
-                $("#hBranchStoreList .selectedItem").children('[branchStoreId="' + rowData[0].branchStoreId + '"]').remove();
+                for (var key in rowData) {
+                    messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows(indexes).nodes().to$().removeClass(rowData[key].branchStoreId);
+                    $("#hBranchStoreList .selectedItem").children('[branchStoreId="' + rowData[key].branchStoreId + '"]').remove();
+                }
             });
     },
 
