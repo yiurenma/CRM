@@ -56,6 +56,10 @@ function getDataTableParams(d, method, path) {
     dataTableParamJson.sign = $.md5(method + path + $.md5(vType));
     dataTableParamJson.size = d.length;
     dataTableParamJson.cPage = d.start / d.length + 1;
+    if(dataTableParamJson.size == -1){
+       dataTableParamJson.size = "";
+       dataTableParamJson.cPage = 0;
+    }
     return dataTableParamJson;
 };
 

@@ -410,7 +410,7 @@ var messageMarketingItem = {
         $("#goodsList .selectedItem").on("click", ".glyphicon-remove", function() {
             var goodsId = $(this).parent().attr("goods-id");
             //删除表格对应的选项 TODO 暂时添加一个商品ID到对应的class来解决这个问题，以后要查相关资料看是否能根据行的内容来删除对应的行
-            messageMarketingItem.messageMarketingImportantGoodsTable.rows('.' + goodsId).deselect();
+            messageMarketingItem.messageMarketingImportantGoodsTable.row('.' + goodsId).deselect();
             //删除指定商品
             $(this).parent().remove();
         });
@@ -436,7 +436,7 @@ var messageMarketingItem = {
                 }
             });
             //删除表格对应的选项 TODO 暂时添加一个门店ID到对应的class来解决这个问题，以后要查相关资料看是否能根据行的内容来删除对应的行
-            messageMarketingItem.messageMarketingBranchStoreTable.rows('.' + branchStoreId).deselect();
+            messageMarketingItem.messageMarketingBranchStoreTable.row('.' + branchStoreId).deselect();
             //删除最近门店
             $(this).parent().remove();
         });
@@ -445,7 +445,7 @@ var messageMarketingItem = {
         $("#cBranchStoreList .selectedItem").on("click", ".glyphicon-remove", function() {
             var branchStoreId = $(this).parent().attr("branchStoreId");
             //删除表格对应的选项 TODO 暂时添加一个门店ID到对应的class来解决这个问题，以后要查相关资料看是否能根据行的内容来删除对应的行
-            messageMarketingItem.messageMarketingBranchStoreTable.rows('.' + branchStoreId).deselect();
+            messageMarketingItem.messageMarketingBranchStoreTable.row('.' + branchStoreId).deselect();
             //删除指定门店
             $(this).parent().remove();
         });
@@ -471,7 +471,7 @@ var messageMarketingItem = {
                 }
             });
             //删除表格对应的选项 TODO 暂时添加一个门店ID到对应的class来解决这个问题，以后要查相关资料看是否能根据行的内容来删除对应的行
-            messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows('.' + measureBranchStoreId).deselect();
+            messageMarketingItem.messageMarketingMeasureBranchStoreTable.row('.' + measureBranchStoreId).deselect();
             //删除最近门店
             $(this).parent().remove();
         });
@@ -480,7 +480,7 @@ var messageMarketingItem = {
         $("#hBranchStoreList .selectedItem").on("click", ".glyphicon-remove", function() {
             var measureBranchStoreId = $(this).parent().attr("measureBranchStoreId");
             //删除表格对应的选项 TODO 暂时添加一个门店ID到对应的class来解决这个问题，以后要查相关资料看是否能根据行的内容来删除对应的行
-            messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows('.' + measureBranchStoreId).deselect();
+            messageMarketingItem.messageMarketingMeasureBranchStoreTable.row('.' + measureBranchStoreId).deselect();
             //删除指定门店
             $(this).parent().remove();
         });
@@ -831,21 +831,22 @@ var messageMarketingItem = {
             } else {
                 messageMarketingItem.messageMarketingImportantGoodsTable.rows({ page: 'current' }).deselect();
             }
+            $(this).toggleClass('select_all_checked');
         });
 
         //选择商品：点击商品事件
         messageMarketingItem.messageMarketingImportantGoodsTable
             .on('select', function(e, dt, type, indexes) {
-                var rowData = messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).data().toArray();
+                var rowData = messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).data().toArray();             
                 for (var key in rowData) {
-                    messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).nodes().to$().addClass(rowData[key].drugId);
+                     messageMarketingItem.messageMarketingImportantGoodsTable.row(key).nodes().to$().addClass(rowData[key].drugId);
                     $("#goodsList .selectedItem").append('<a class="chosenObject" goods-id="' + rowData[key].drugId + '">' + rowData[key].name + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
                 }
             })
             .on('deselect', function(e, dt, type, indexes) {
-                var rowData = messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).data().toArray();
+                var rowData = messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).data().toArray();               
                 for (var key in rowData) {
-                    messageMarketingItem.messageMarketingImportantGoodsTable.rows(indexes).nodes().to$().removeClass(rowData[key].drugId);
+                    messageMarketingItem.messageMarketingImportantGoodsTable.row(key).nodes().to$().removeClass(rowData[key].drugId);
                     $("#goodsList .selectedItem").children('[goods-id="' + rowData[key].drugId + '"]').remove();
                 }
             });
@@ -926,6 +927,7 @@ var messageMarketingItem = {
             } else {
                 messageMarketingItem.messageMarketingBranchStoreTable.rows({ page: 'current' }).deselect();
             }
+            $(this).toggleClass('select_all_checked');
         });
 
         //最近消费门店：点击门店事件
@@ -933,14 +935,14 @@ var messageMarketingItem = {
             .on('select', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).data().toArray();
                 for (var key in rowData) {
-                    messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).nodes().to$().addClass(rowData[key].branchStoreId);
+                    messageMarketingItem.messageMarketingBranchStoreTable.row(key).nodes().to$().addClass(rowData[key].branchStoreId);
                     $("#cBranchStoreList .selectedItem").append('<a class="chosenObject" branchStoreId="' + rowData[key].branchStoreId + '">' + rowData[key].branchStoreName + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
                 }
             })
             .on('deselect', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).data().toArray();
                 for (var key in rowData) {
-                    messageMarketingItem.messageMarketingBranchStoreTable.rows(indexes).nodes().to$().removeClass(rowData[key].branchStoreId);
+                    messageMarketingItem.messageMarketingBranchStoreTable.row(key).nodes().to$().removeClass(rowData[key].branchStoreId);
                     $("#cBranchStoreList .selectedItem").children('[branchStoreId="' + rowData[key].branchStoreId + '"]').remove();
                 }
             });
@@ -1021,6 +1023,7 @@ var messageMarketingItem = {
             } else {
                 messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows({ page: 'current' }).deselect();
             }
+            $(this).toggleClass('select_all_checked');
         });
 
         //最近测量门店：点击门店事件
@@ -1028,7 +1031,7 @@ var messageMarketingItem = {
             .on('select', function(e, dt, type, indexes) {
                 var rowData = messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows(indexes).data().toArray();
                 for (var key in rowData) {
-                    messageMarketingItem.messageMarketingMeasureBranchStoreTable.rows(indexes).nodes().to$().addClass(rowData[key].branchStoreId);
+                    messageMarketingItem.messageMarketingMeasureBranchStoreTable.row(key).nodes().to$().addClass(rowData[key].branchStoreId);
                     $("#hBranchStoreList .selectedItem").append('<a class="chosenObject" branchStoreId="' + rowData[key].branchStoreId + '">' + rowData[key].branchStoreName + '<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>' + '</a>');
                 }
             })
