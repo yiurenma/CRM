@@ -1068,6 +1068,23 @@
        margin-left: -6px;
        background: url('../../images/checked.png') center center no-repeat;
    }
+   /* 全选按钮 */
+   
+   .select-current-page-checkbox {
+       border: 1px solid #8aa1ac;
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+       width: 12px;
+       height: 12px;
+       border-radius: 2px;
+       text-shadow: none;
+       outline: none;
+   }
+   
+   .sellect_all_checked {
+       background: url('../../images/checked.png') center center no-repeat;
+   }
    
    .table>thead>tr>th {
        vertical-align: bottom;
