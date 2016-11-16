@@ -1139,8 +1139,12 @@
        outline: none;
    }
    
-   .sellect_all_checked {
+   .select_all_checked {
        background: url('../../images/checked.png') center center no-repeat;
+   }
+   
+   .modal-content .select-checkbox {
+       text-align: center;
    }
    
    table.dataTable {
