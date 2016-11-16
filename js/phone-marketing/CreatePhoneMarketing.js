@@ -785,7 +785,7 @@ var messageMarketingItem = {
                 "orderable": false,
                 "className": 'select-checkbox', //选择行
                 "targets": 0,
-                "title": '<input type="checkbox" id="importantGoodsCurrentPage" class="select-checkbox"/>'
+                "title": '<input type="checkbox" id="importantGoodsCurrentPage" class="select-current-page-checkbox"/>'
             }],
             "select": {
                 "style": 'multi', //多选
