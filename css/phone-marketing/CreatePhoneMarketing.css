@@ -647,6 +647,7 @@
    
    .termsList .btn-group {
        vertical-align: middle;
+       width: 88%;
    }
    
    .checkbox,
