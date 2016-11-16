@@ -734,10 +734,10 @@
        margin-top: 8px;
    }
    
-   .left_table .dataTables_scroll {
+/*   .left_table .dataTables_scroll {
        max-height: 670px;
        overflow: auto;
-   }
+   }*/
    
    .selectedItem>.chosenObject {
        display: inline-block;
