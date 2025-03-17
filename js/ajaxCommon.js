@@ -3,7 +3,7 @@ var vCode = 100;
 var platform = "web";
 var token = 000;
 
-var apiEntry = "https://platform.carelinker.com/clApi/entry";//生产环境api链接
+var apiEntry = "http://3.89.55.140:8080/api/rule";//生产环境api链接
 // var apiEntry = "http://api.carelinker.com/clApi/entry"; //本地和测试环境api链接
 //暂时让cookie一直存在，在总览页面的js中存入mainStoreId的值并且如果链接中如果存在mainStoreId的值优先取这个值并保存在cookie中
 // $.cookie("mainStoreId", "1100000");
@@ -55,10 +55,10 @@ function getDataTableParams(d, method, path) {
     dataTableParamJson.vType = vType;
     dataTableParamJson.sign = $.md5(method + path + $.md5(vType));
     dataTableParamJson.size = d.length;
-    dataTableParamJson.cPage = d.start / d.length + 1;
+    dataTableParamJson.page = d.start / d.length;
     if(dataTableParamJson.size == -1){
        dataTableParamJson.size = "";
-       dataTableParamJson.cPage = 0;
+       dataTableParamJson.page = 0;
     }
     return dataTableParamJson;
 };

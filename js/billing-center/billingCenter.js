@@ -7,14 +7,14 @@ var billingCenter = {
     billingCenterTable: "",
     billingCenterApiParams: "",
     billingCenterTableColumns: [{
-        "data": "date",
-        "title": "日期",
+        "data": "key",
+        "title": "rule",
     }, {
-        "data": "minuteCount",
-        "title": "通话总时长",
+        "data": "remark",
+        "title": "description",
     }, {
-        "data": "smsCount",
-        "title": "发送短信数量",
+        "data": "createdDateTime",
+        "title": "create date time",
     }],
 
     init: function() {
@@ -27,7 +27,7 @@ var billingCenter = {
         billingCenter.startDate = moment(start,"LL").format("YYYYMMDD") + "000000"; //YYYYMMDDHHMMSS
         billingCenter.dateType = "DAY";
 
-        billingCenter.smsAndPhoneLeftAjax();
+        // billingCenter.smsAndPhoneLeftAjax();
         billingCenter.smsAndPhoneDetailAjax();
 
         //初始化电话营销时间插件
@@ -59,21 +59,21 @@ var billingCenter = {
     },
 
     //账单和电话剩余Ajax访问
-    smsAndPhoneLeftAjax: function() {
-
-        var success = function(result) {
-            var balance = result.data;
-            $("#smsLeft").text(balance.smsLeft);
-            $("#smsUsed").text("当月已成功发送" + balance.smsUsed + "条");
-            $("#phoneLeft").text(balance.callMinuteLeft);
-            $("#phoneUsed").text("当月已通话" + balance.callMinuteUsed + "分钟");
-        };
-
-        var data = {
-            "mStId": billingCenter.mainStoreId
-        };
-        post("get", "/clCommunication/api/balance", data, success);
-    },
+    // smsAndPhoneLeftAjax: function() {
+    //
+    //     var success = function(result) {
+    //         var balance = result.data;
+    //         $("#smsLeft").text(balance.smsLeft);
+    //         $("#smsUsed").text("当月已成功发送" + balance.smsUsed + "条");
+    //         $("#phoneLeft").text(balance.callMinuteLeft);
+    //         $("#phoneUsed").text("当月已通话" + balance.callMinuteUsed + "分钟");
+    //     };
+    //
+    //     var data = {
+    //         "mStId": billingCenter.mainStoreId
+    //     };
+    //     post("get", "/clCommunication/api/balance", data, success);
+    // },
 
     smsAndPhoneDetailAjax: function() {
         //初始化账单中心表格
@@ -86,10 +86,11 @@ var billingCenter = {
             "ajax": {
                 "url": apiEntry, //api访问链接    
                 "dataType": "json",
-                "type": "post",
-                "data": function() { //d代表default，即在默认分页参数
+                "type": "get",
+                "data": function () { //d代表default，即在默认分页参数
                     return billingCenter.prepareApiParams();
                 },
+                "cache": true,
                 "dataFilter": function(data) { //根据数据源中的分页数据得到datatables进行分页的相关参数
                     data = jQuery.parseJSON(data);
                     return JSON.stringify(billingCenter.apiDataFromServer(data));
@@ -116,7 +117,7 @@ var billingCenter = {
         });
     },
 
-    //准备访问API的相关参数
+    // 准备访问API的相关参数
     prepareApiParams: function() {
 
         billingCenter.billingCenterApiParams = {
@@ -132,13 +133,13 @@ var billingCenter = {
     apiDataFromServer: function(data) {
         var result = {};
         if (data.page) {
-            result.recordsTotal = data.page.totalCount;
-            result.recordsFiltered = data.page.totalCount;
-            result.data = data.dataList;
-        } else if (data.error == 200) {
-            result.recordsTotal = data.dataList.length;
-            result.recordsFiltered = data.dataList.length;
-            result.data = data.dataList;
+            result.recordsTotal = data.page.totalElements;
+            result.recordsFiltered = data.page.totalElements;
+            result.data = data._embedded.messageRules;
+        // } else if (data.error == 200) {
+        //     result.recordsTotal = data.dataList.length;
+        //     result.recordsFiltered = data.dataList.length;
+        //     result.data = data.dataList;
         } else {
             result.recordsTotal = 0;
             result.recordsFiltered = 0;

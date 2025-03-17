@@ -8,54 +8,36 @@ var callRecordItem = {
     callRecordSmsMarketingTable: "",
     callRecordSmsMarketingApiParams: "",
     callRecordSmsMarketingTableColumns: [{
-        "data": "sendDate",
-        "title": "短信发送时间",
+        "data": "id",
+        "title": "编号",
     }, {
-        "data": "storeName",
-        "title": "连锁/门店",
+        "data": "key",
+        "title": "规则",
     }, {
-        "data": "employeeRealName",
-        "title": "发送者",
+        "data": "remark",
+        "title": "描述",
     }, {
-        "data": "toMobile",
-        "title": "会员联系方式",
+        "data": "createdDateTime",
+        "title": "创建时间",
     }, {
-        "data": "patientName",
-        "title": "会员姓名",
-    }, {
-        "data": "content",
-        "title": "短信内容",
-    }, {
-        "data": "typeStr",
-        "title": "短信类型",
+        "data": "lastModifiedDateTime",
+        "title": "最后更新时间",
     }],
     //电话营销
     callRecordPhoneMarketingTable: "",
     callRecordPhoneMarketingApiParams: "",
     callRecordPhoneMarketingTableColumns: [{
-        "data": "startTime",
-        "title": "回访时间",
+        "data": "id",
+        "title": "编号",
     }, {
-        "data": "storeName",
-        "title": "连锁/门店",
+        "data": "remark",
+        "title": "description",
     }, {
-        "data": "caller",
-        "title": "拨出号码",
+        "data": "createdDateTime",
+        "title": "create date time",
     }, {
-        "data": "called",
-        "title": "接听号码",
-    }, {
-        "data": "type",
-        "title": "呼叫模式",
-    }, {
-        "data": "employeeRealName",
-        "title": "分配店员",
-    }, {
-        "data": "status",
-        "title": "状态",
-    }, {
-        "data": "callTime",
-        "title": "时长",
+        "data": "lastModifiedDateTime",
+        "title": "update date time",
     }, {
         "data": "recordUrl",
         "title": "操作",
@@ -173,7 +155,7 @@ var callRecordItem = {
     smsMarketingAjax: function() {
         //初始化短信营销表格
         var callRecordSmsMarketingDraw; //datatables服务器分页必传参数
-        $('#smsMarketingTable').DataTable({
+        var table = $('#smsMarketingTable').DataTable({
             //以下是对表格获得数据的设置
             "dom": "Btlp",
             "destroy": true,
@@ -184,7 +166,8 @@ var callRecordItem = {
             "ajax": {
                 "url": apiEntry, //api访问链接    
                 "dataType": "json",
-                "type": "post",
+                "type": "get",
+                "cache": true,
                 "data": function(d) { //d代表default，即在默认分页参数
                     callRecordSmsMarketingDraw = d.draw;
                     return callRecordItem.prepareSmsMarketingApiParams(d);
@@ -213,6 +196,47 @@ var callRecordItem = {
                 }
             }
         });
+
+        // 初始化 X-editable
+        $.fn.editable.defaults.mode = 'inline'; // 设置为 inline 编辑模式
+
+        // 使表格单元格可编辑
+        $('#smsMarketingTable').on('click', 'td', function() {
+            var cell = table.cell(this);
+            var originalData = cell.data();
+            // 获取当前单元格的列索引
+            var columnIndex = $(this).index();
+            // 根据列的索引获取字段名称
+            var fieldName = callRecordItem.callRecordSmsMarketingTableColumns[columnIndex].data; // 获取当前列的字段名称
+            // X-editable 设置
+            $(this).editable({
+                type: 'text',
+                title: 'Edit',
+                success: function(response, newValue) {
+                    cell.data(newValue).draw();
+                    var rowData = table.row($(this).closest('tr')).data();
+                    $.ajax({
+                        url: 'http://3.89.55.140:8080/api/rule/' + rowData.id,
+                        type: 'PATCH',
+                        contentType: 'application/json',
+                        data: JSON.stringify({
+                            [fieldName]: newValue // 使用获取的字段名称
+                        }),
+                        success: function(apiResponse) {
+                            console.log('Update successful:', apiResponse);
+                            // 刷新 DataTable 数据
+                            table.ajax.reload(null, false); // false 表示保持当前页
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error updating:', error);
+                        }
+                    });
+                },
+                error: function(xhr, status, error) {
+                    alert('编辑失败: ' + error);
+                }
+            }).editable('toggle'); // 切换编辑状态
+        });
     },
 
     phoneMarketingAjax: function() {
@@ -222,14 +246,15 @@ var callRecordItem = {
             //以下是对表格获得数据的设置
             "dom": "Btlp",
             "destroy": true,
-             "scrollX": true,
+            "scrollX": true,
             "serverSide": true, //开启datatables的服务器模式
             "lengthMenu": [10, 20, 30],
             "ordering": false, //禁止排序
             "ajax": {
                 "url": apiEntry, //api访问链接    
                 "dataType": "json",
-                "type": "post",
+                "type": "get",
+                "cache": true,
                 "data": function(d) { //d代表default，即在默认分页参数
                     callRecordPhoneMarketingDraw = d.draw;
                     return callRecordItem.preparePhoneMarketingApiParams(d);
@@ -265,7 +290,8 @@ var callRecordItem = {
         callRecordItem.callRecordSmsMarketingApiParams = {
             "mStId": callRecordItem.mainStoreId,
             "bDateT": callRecordItem.startDate,
-            "eDateT": callRecordItem.endDate
+            "eDateT": callRecordItem.endDate,
+            "sort": "lastModifiedDateTime,desc",
         };
         return $.extend(callRecordItem.callRecordSmsMarketingApiParams, getDataTableParams(d, "get", "/clCrm/api/crm/marketing/sms/callBack/records/table/datas"));
     },
@@ -285,13 +311,13 @@ var callRecordItem = {
         var result = {};
         result.draw = draw;
         if (data.page) {
-            result.recordsTotal = data.page.totalCount;
-            result.recordsFiltered = data.page.totalCount;
-            result.data = data.dataList;
-        } else if (data.error == 200) {
-            result.recordsTotal = data.dataList.length;
-            result.recordsFiltered = data.dataList.length;
-            result.data = data.dataList;
+            result.recordsTotal = data.page.totalElements;
+            result.recordsFiltered = data.page.totalElements;
+            result.data = data._embedded.messageRules;
+        // } else if (data.error == 200) {
+        //     result.recordsTotal = data.dataList.length;
+        //     result.recordsFiltered = data.dataList.length;
+        //     result.data = data.dataList;
         } else {
             result.recordsTotal = 0;
             result.recordsFiltered = 0;
